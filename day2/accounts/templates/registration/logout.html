@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    - Logout
+{% endblock %}
+
+{% block content %}
+<div class="row my-5">
+    <div class="col-12 panel panel-default">
+        <div class="alert alert-info my-4">
+            로그아웃 되었습니다.
+        </div>
+        <a class="btn btn-primary" href="{% url 'login' %}">Click to Login</a>
+    </div>
+</div>
+{% endblock %}

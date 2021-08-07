@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+- List
+{% endblock %}
+
+{% block content %}
+    {% for post in photos %}
+        <div class="row my-3">
+            <div class="col-12 panel panel-default">
+                <div><img src="{{ post.photo.url }}" style="width:100%;"></div>
+                <p>{{ post.author.username }}</p>
+                <p>{{ post.text | linebreaksbr }}</p>
+                <div class="text-right">
+                    <a href="{% url 'photo:photo_detail' pk=post.id %}" class="btn btn-xs btn-success">reply</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

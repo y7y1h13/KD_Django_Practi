@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+- Upload
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12 panel panel-default">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-primary" value="Upload">
+            </form>
+        </div>
+    </div>
+{% endblock %}

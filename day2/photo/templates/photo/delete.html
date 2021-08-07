@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    - Delete
+{% endblock %}
+
+{% block content %}
+<div class="row my-5">
+    <div class="col-12 panel panel-default">
+        <div class="alert alert-info">
+            정말로 {{ object }}을 삭제 하실건가요?
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-danger" value="Confirm">
+        </form>
+    </div>
+</div>
+{% endblock %}

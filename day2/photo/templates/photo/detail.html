@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ object.text | truncatechars:10 }}
+{% endblock %}
+
+{% block content %}
+<div class="row my-5">
+    <div class="col-12 panel panel-default">
+        <div><img src="{{ object.photo.url }}" style="width:100%;"></div>
+        <p>{{ object.author.username }}</p>
+        <p>{{ object.text | linebreaksbr }}</p>
+        <a href="{% url 'photo:photo_delete' pk=object.id %}" class="btn btn-outline-danger btn-sm float-right">Delete</a>
+        <a href="{% url 'photo:photo_update' pk=object.id %}" class="btn btn-outline-success btn-sm float-right">Modify</a>
+    </div>
+</div>
+{% endblock %}
