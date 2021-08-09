@@ -1,8 +1,8 @@
 from django.urls import path
 from django.views.generic.detail import DetailView
 
-from .models import Photo  # 데이터 불러옴
 from .views import *  # 다불러옴
+from .models import Photo
 
 app_name = 'photo'
 
