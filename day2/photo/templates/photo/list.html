@@ -8,7 +8,7 @@
     {% for post in photos %}
         <div class="row my-3">
             <div class="col-12 panel panel-default">
-                <div><img src="{{ post.photo.url }}" style="width:100%;"></div>
+                <div style="text-align: center;"><img src="{{ post.photo.url }}" style="width:100%;"></div>
                 <p>{{ post.author.username }}</p>
                 <p>{{ post.text | linebreaksbr }}</p>
                 <div class="text-right">
