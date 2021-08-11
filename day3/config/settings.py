@@ -33,12 +33,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storages',
     'shop',
+    'cart',
+    'coupon',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.naver',
-    'cart',
 
 ]
 

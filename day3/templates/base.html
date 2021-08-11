@@ -25,9 +25,9 @@
                 {% endif %}
             </li>
             <li class="nav-item">
-              <a class="nav-link btn btn-outline-success" href="">CART
+              <a class="nav-link btn btn-outline-success" href="{% url 'cart:detail' %}">CART
                   {% if cart|length > 0 %}
-                    {{ cart.get_product_total }} with {{ cart | length }} items<!--담겨있는 갯수 출력-->
+                    {{ cart.get_total_price }} with {{ cart | length }} items<!--담겨있는 갯수 출력-->
                   {% else %}
                     : 비어있음
                   {% endif %}

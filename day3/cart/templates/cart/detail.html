@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-    Category Page
-
+    CartList
 {% endblock %}
 
 {% block content %}
@@ -12,38 +11,60 @@
                 <th scope="col">Product</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Remove</th>
-                <th scope="col">UmitPrice</th>
+                <th scope="col">UnitPrice</th>
                 <th scope="col">Price</th>
             </tr>
         </thead>
 
         <tbody>
-        {% for item in cart %}
-        {% with product=item.product %}
-         <tr>
-             <td scope="row">
-                    <a href="{{ product.get_absolute_url }}">
-                        <img src="{{ product.image.url }}" class="img-thumnail">
-                    </a>
-                </td>
-                <td>{{ product.name }}</td>
-                <td>
-                    <form action="{% url 'cart:product_add' product.id%}" method="post">
-                        {% csrf_token %}
-                        {{ item.quantity_form.quantity }}
-                        {{ item.quantity_form.is_update }}
-                        <input type="submit" class="btn btn-primary" value="Update">
-                    </form>
-                </td>
-                <td>
-                    <a href="{% url 'cart:product_remove' product.id %}">Remove</a>
-                </td>
-                <td>{{ item.price }}</td>
-                <td>{{ item.total_price }}</td>
+            {% for item in cart %}
+                {% with product=item.product %}
+                <tr>
+                    <th scope="row">
+                        <a href="{{product.get_absolute_url}}">
+                            <img src="{{product.image.url}}" class="img-thumbnail">
+                        </a>
+                    </th>
+                    <td>{{product.name}}</td>
+                    <td>
+                        <form action="{% url 'cart:product_add' product.id %}" method="post">
+                            {% csrf_token %}
+                            {{item.quantity_form.quantity}}
+                            {{item.quantity_form.is_update}}
+                            <input type="submit" class="btn btn-primary" value="Update">
+                        </form>
+                    </td>
+                    <td><a href="{% url 'cart:product_remove' product.id%}">Remove</a></td>
+                    <td class="num">{{item.price}}</td>
+                    <td class="num">{{item.total_price}}</td>
+                </tr>
+                {% endwith %}
+            {% endfor %}
+            {% if cart.coupon %}
+            <tr class="total">
+                <td>Subtotal</td>
+                <td colspan="4"></td>
+                <td class="num">{{cart.get_product_total|floatformat:"2"}}</td>
             </tr>
-        {% endwith %}
-        {% endfor %}
+            <tr>
+                <td>{{cart.coupon.code}} coupon ({{cart.coupon.amount}})</td>
+                <td colspan="4"></td>
+                <td>- {{cart.get_discount_total|floatformat:"2"}}</td>
+            </tr>
+            {% endif %}
+            <tr class="total">
+                <td>Total</td>
+                <td colspan="4"></td>
+                <td class="num">{{cart.get_total_price|floatformat:"2"}}</td>
+            </tr>
         </tbody>
     </table>
-
+    <p>
+        Add Coupon:
+    </p>
+    <form action="{% url 'coupon:add' %}" method="post">
+        {% csrf_token %}
+        {{add_coupon}}
+        <input type="submit" value="Add">
+    </form>
 {% endblock %}
