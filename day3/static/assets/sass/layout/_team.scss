@@ -1,0 +1,46 @@
+.team-one {
+  margin-bottom: remCal(100);
+  .team-card {
+    padding: emCal(16, 35);
+    box-shadow: 0px 2px 10px 0 rgba(223, 223, 224, 0.5);
+    transition: $transition;
+    &:hover {
+      box-shadow: 0px 6px 15px 0 rgba(223, 223, 224, 0.7);
+      .team-card__avatar {
+        img {
+          transform: scale(0.9);
+        }
+      }
+    }
+    &__avatar {
+      margin-bottom: emCal(16, 30);
+      img {
+        margin: 0 auto;
+        max-width: 100%;
+        transition: $transition;
+      }
+    }
+    &__content {
+      text-align: center;
+      h3 {
+        @include typo($fsz: emCal(16, 18), $fw: 600);
+        margin-bottom: emCal(18, 10);
+      }
+      h5 {
+        @include typo($fsz: emCal(16, 13), $color: setColor(red));
+        margin-bottom: emCal(13, 18);
+      }
+      p {
+        @include typo($fsz: emCal(16, 15), $lh: emCal(16, 26));
+        margin-bottom: emCal(15, 25);
+      }
+    }
+  }
+  .slick-slider {
+    margin: 0 emCal(16, -15);
+    .slider__item {
+      outline: 0;
+      padding: emCal(16, 15);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+extends base/layout.pug
+block title
+  title Homepage 2
+block header
+  include components/header/header-two.pug
+block content
+  +slider({classname: '-style-2 slider-arrow-middle', data: SLIDER.TWO})
+  include components/sections/categories/category-one.pug
+  include components/sections/product-thumb/product-tab-one.pug
+  include components/sections/dale-of-week/dow-one.pug
+  include components/sections/blog/blog-one.pug
+  include components/sections/brands/brands-one.pug
+  .mb-100
+    include components/other/benefits.pug
+  include components/sections/instagram/instagram-one.pug
+  include components/footer/footer-one.pug

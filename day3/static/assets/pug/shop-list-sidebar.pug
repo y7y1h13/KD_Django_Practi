@@ -1,0 +1,28 @@
+extends base/layout.pug
+block title
+  title Shop Grid Sidebar
+  -var isWideContainer = true;
+block header
+  include components/header/menu/menu-five.pug
+block content
+  +breadcrumb({title: 'Shop', children: '<li>Home</li><li class="active">Shop</li>'})
+  .shop
+    .container
+      .row
+        .col-12.col-md-4.col-lg-3
+          include components/shop/shop-sidebar.pug
+        .col-12.col-md-8.col-lg-9
+          include components/shop/shop-header.pug
+          .shop-products
+            .shop-products__gird
+              .row
+                each item in PRODUCTS.slice(0,12)
+                  .col-12.col-sm-6.col-lg-4
+                    +product({data: item})
+            .shop-products__list
+              .row
+                each item in PRODUCTS.slice(0,12)
+                  .col-12
+                    +product({data: item, type: 'list'})
+          include components/other/paginator.pug
+  include components/footer/footer-one.pug

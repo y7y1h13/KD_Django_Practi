@@ -1,0 +1,15 @@
+include ../../../base/variable.pug
+include ../../../mixins/section-title.pug
+.introduction-six
+  .container
+    +sectionTitle({classname: '-center', title: 'What Ingredients?'}) 
+    .introduction-six__wrapper
+      .row
+        each item in INTRODUCTION.SIX
+          .col-12.col-md-6.col-lg-4
+            .introduction-six__wrapper__item
+              .introduction-six__wrapper__item__image
+                img(src=item.image alt=item.title)
+              .introduction-six__wrapper__item__content
+                a(href='#')= item.title
+                p= item.description

@@ -1,0 +1,46 @@
+.add-to-cart {
+  position: relative;
+  height: emCal(16, 50);
+  display: inline-block;
+  padding: 0 emCal(16, 30) 0 emCal(16, 70);
+  border-radius: 999px;
+  border: 1px solid setShadeColor(light);
+  cursor: pointer;
+  transition: $transition;
+  &.-dark {
+    background-color: setShadeColor(dark);
+    h5 {
+      color: #fff;
+    }
+  }
+  &.-disable {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+    padding: 0 emCal(16, 70) 0 emCal(16, 30);
+    .btn {
+      left: 100%;
+      transform: translateX(-100%);
+    }
+  }
+  .btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: emCal(13, 50);
+    width: emCal(13, 50);
+    padding: 0;
+    line-height: emCal(13, 50);
+    transition: $transition;
+  }
+  h5 {
+    @include typo($fsz: emCal(16, 13), $lh: emCal(13, 50), $up: true, $fw: 600);
+  }
+  &:hover {
+    padding: 0 emCal(16, 70) 0 emCal(16, 30);
+    .btn {
+      left: 100%;
+      transform: translateX(-100%);
+    }
+  }
+}

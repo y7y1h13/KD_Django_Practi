@@ -1,0 +1,8 @@
+mixin button(props = {})
+  - var {classname, type="link", content, href = "#"} = props
+  if type === 'link'
+    a(href=href class=`btn ${classname || ''}`)
+      != content
+  if type === 'button'
+    button(class=`btn ${classname || ''}`)
+      != content

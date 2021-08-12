@@ -1,0 +1,134 @@
+.shop {
+  margin-bottom: remCal(100);
+  &-sidebar {
+    @include mq(lg) {
+      font-size: 16px;
+      margin-bottom: emCal(15, 50);
+    }
+    &__section {
+      margin-bottom: emCal(16, 35);
+      &.-categories {
+        ul {
+          list-style: none;
+          & > li {
+            margin-bottom: emCal(16, 10);
+            &.active {
+              a {
+                &:after {
+                  left: 0;
+                }
+              }
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+            a {
+              @include link(
+                $hvr-color: setShadeColor(dark),
+                $fsz: emCal(16, 14),
+                $cpt: true,
+                $bottom-dash: true
+              );
+            }
+          }
+        }
+      }
+      &.-refine {
+        .shop-sidebar__section__item {
+          margin-bottom: emCal(16, 35);
+          h5 {
+            @include typo($fsz: emCal(16, 17), $fw: 600);
+            margin-bottom: emCal(17, 25);
+          }
+          ul {
+            list-style: none;
+            li {
+              margin-bottom: emCal(16, 10);
+              &:last-child {
+                margin-bottom: 0;
+              }
+              label {
+                @include typo($fsz: emCal(16, 14), $cpt: true);
+                cursor: pointer;
+                input {
+                  margin-right: emCal(14, 15);
+                }
+              }
+            }
+          }
+        }
+      }
+      &__banner {
+        img {
+          max-width: emCal(16, 250);
+          @include imgCenter($type: contain);
+        }
+      }
+    }
+  }
+  &-products {
+    .five-col {
+      padding: 0 1rem;
+      @include mq(xxl) {
+        flex: 1 1 25%;
+        max-width: 25%;
+      }
+      @include mq(lg) {
+        flex: 1 1 33.33333%;
+        max-width: 33.33333%;
+        padding: 0 0.25rem;
+      }
+      @include mq(md) {
+        flex: 1 1 50%;
+        max-width: 50%;
+      }
+    }
+    .product,
+    .product-list {
+      margin-bottom: emCal(16, 30);
+    }
+  }
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: emCal(16, 20);
+    &__view {
+      display: flex;
+      align-items: center;
+      @include mq(md) {
+        margin-bottom: emCal(16, 20);
+      }
+      &__icon {
+        margin-right: emCal(16, 15);
+        a {
+          @include link($fsz: emCal(16, 20), $color: setShadeColor(medium));
+          margin-right: emCal(20, 10);
+          &.active {
+            color: setShadeColor(dark);
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    select {
+      padding: emCal(16, 13) emCal(16, 45) emCal(16, 13) emCal(16, 13);
+      background-position: calc(100% - 15px) center;
+      background-color: #f5f5f5;
+      border: 0;
+    }
+  }
+  &.-five-col {
+    .shop-products {
+      &__grid {
+        .w-100 {
+          @include mq(xxl) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

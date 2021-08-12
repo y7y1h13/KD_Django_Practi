@@ -1,0 +1,75 @@
+include ../base/variable.pug
+include rate.pug
+include button.pug
+include quantity-controller.pug
+include add-to-cart-button.pug
+mixin productDetailContent(props = {})
+  -var {data = PRODUCTS[0], hideTab = false} = props;
+  .product-detail__content
+    .product-detail__content__header
+      h5= data.category
+      h2= data.name
+    .product-detail__content__header__comment-block
+      +rate({value: 4})
+      p 03 review
+      a(href="#") Write a reviews
+    h3= `$${data.price}.00`
+    .divider
+    .product-detail__content__footer
+      ul
+        li Brand:
+          = data.brand
+        li Product code: 
+          = data.code
+        li Reward point: 
+          = data.point
+        li Availability: In Stock
+      .product-detail__colors
+        span Color:
+        each item in data.variation
+          .product-detail__colors__item(style=`background-color: ${item.colorCode}`)
+      .product-detail__controller
+        +quantityController({value: 2, classname: '-border -round'})
+        +atcBtn({classname: "-dark"})
+        .product-detail__controler__actions
+        +button({classname: "-round -white", href: '#', content: '<i class="fas fa-heart"></i>'})
+      if !hideTab
+        .divider
+        .product-detail__content__tab
+          ul.tab-content__header
+            li.tab-switcher(data-tab-index='0' tabindex='0') Description
+            li.tab-switcher(data-tab-index='1' tabindex='0') Shipping & Returns
+            li.tab-switcher(data-tab-index='2' tabindex='0') Reviews ( 03 )
+          #allTabsContainer
+            .tab-content__item.-description(data-tab-index='0')
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+            .tab-content__item.-ship(data-tab-index='1' style='display:none;')
+              h5
+                span Ship to
+                |New york
+              ul
+                li
+                  | Standard Shipping on order over 0kg - 5kg. 
+                  span +10.00
+                li
+                  | Heavy Goods Shipping on oder over 5kg-10kg . 
+                  span +20.00
+              h5 Delivery &amp; returns
+              p We diliver to over 100 countries around the word. For full details of the delivery options we offer, please view our Delivery information.
+            .tab-content__item.-review(data-tab-index='2' style='display:none;')
+              include ../components/other/review.pug
+              form
+                h5 Write a review
+                .row
+                  .col-12.col-md-6
+                    .input-validator
+                      input(type='text' name='name' placeholder='Name')
+                  .col-12.col-md-6
+                    .input-validator
+                      input(type='text' name='email' placeholder='Email')
+                  .col-12
+                    .input-validator
+                      textarea(name='message' placeholder='Message' rows='5')
+                    span.input-error
+                  .col-12
+                    +button({content: "Write a review", classname:"-dark", type: 'button'}) 

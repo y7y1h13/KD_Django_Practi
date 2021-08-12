@@ -1,0 +1,14 @@
+extends base/layout.pug
+block title
+  title Homepage 4
+block header
+  include components/header/menu/menu-five.pug
+block content
+  +slider({classname: '-style-4 slider-arrow-middle', data: SLIDER.FOUR})
+  include components/sections/product-thumb/product-tab-two.pug
+  include components/sections/dale-of-week/dow-two.pug
+  include components/sections/blog/blog-two.pug
+  .mb-100
+    include components/other/benefits.pug
+  include components/sections/instagram/instagram-two.pug
+  include components/footer/footer-one.pug

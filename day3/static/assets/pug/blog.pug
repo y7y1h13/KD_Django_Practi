@@ -1,0 +1,24 @@
+extends base/layout.pug
+block title
+  title Cart
+block header
+  include components/header/menu/menu-five.pug
+block content
+  +breadcrumb({title: 'Blog', children: '<li>Home</li><li class="active">Blog</li>'})
+  .blog
+    .container
+      .row
+        .col-md-3
+          include components/blog/blog-sidebar.pug
+        .col-md-9
+          .blog-content
+            .row
+              .col-12
+                each item in BLOG.slice(0,1)
+                  +post({data: item, style: 6})
+              each item in BLOG.slice(1)
+                .col-12.col-md-6
+                  +post({data: item, style: 2})
+            include components/other/paginator.pug
+  include components/sections/instagram/instagram-two.pug
+  include components/footer/footer-one.pug

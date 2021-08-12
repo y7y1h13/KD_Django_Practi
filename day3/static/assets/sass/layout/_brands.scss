@@ -1,0 +1,38 @@
+.brand-one {
+  &__wrapper {
+    background-color: #feefef;
+    margin-bottom: remCal(100);
+    padding: emCal(16, 50);
+  }
+  .section-title {
+    margin-bottom: 0;
+  }
+  &__logos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: emCal(16, 30);
+    @include mq(md) {
+      grid-template-columns: 1fr 1fr;
+      margin-top: emCal(14, 30);
+    }
+    &__item {
+      padding: emCal(16, 15);
+      height: emCal(16, 80);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: {
+        image: url("../images/brands/BrandsOne/pattern.png");
+        size: cover;
+        position: center;
+      }
+      transition: $transition;
+      &:hover {
+        padding: emCal(16, 12);
+      }
+      img {
+        @include imgCenter($type: contain);
+      }
+    }
+  }
+}

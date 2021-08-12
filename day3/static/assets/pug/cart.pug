@@ -1,0 +1,74 @@
+extends base/layout.pug
+block title
+  title Cart
+block header
+  include components/header/menu/menu-five.pug
+block content
+  +breadcrumb({title: 'Cart', children: '<li>Home</li><li>Shop</li><li class="active">Cart</li>'})
+  .shop
+    .container
+      .cart
+        .container
+          .cart__table
+            .cart__table__wrapper
+              table
+                colgroup
+                  col(style="width: 40%")
+                  col(style="width: 17%")
+                  col(style="width: 17%")
+                  col(style="width: 17%")
+                  col(style="width: 9%")
+                thead
+                  tr
+                    th Product
+                    th Price
+                    th Quantity
+                    th Total
+                    th
+                tbody
+                  each item, index in PRODUCTS.slice(0, 3)
+                    tr
+                      td
+                        .cart-product
+                          .cart-product__image
+                            img(src=item.thumbImage[0], alt="Product image")
+                          .cart-product__content
+                            h5= item.category
+                            a(href='product-detail.html')= item.name
+                      td= item.name
+                      td
+                        +quantityController
+                      td= `${item.price}.00`
+                      td
+                        a(href="#")
+                          i.fal.fa-times
+            .cart__table__footer
+              a(href="shop-fullwidth-4col.html")
+                i.fal.fa-long-arrow-left
+                |Continue Shopping
+              a(href="#")
+                i.fal.fa-trash
+                |Clear Shopping Cart
+          .cart__total
+            .row
+              .col-12.col-md-8
+                .cart__total__discount
+                  p Enter coupon code. It will be applied at checkout.
+                  .input-validator
+                    form(action="")
+                      input(type="text" name="discountCode" placeholder="Your code here")
+                      +button({content: 'Apply', classname: '-dark', type: 'button'})
+              .col-12.col-md-4
+                .cart__total__content
+                  h3 Cart
+                  table
+                    tbody
+                      tr
+                        th Subtotal
+                        td= `$169.00`
+                      tr
+                        th Total
+                        td.final-price= `$169.00`
+                  +button({content: 'Proceed to checkout', classname: '-dark', href: "/checkout.html"})
+  include components/sections/instagram/instagram-two.pug
+  include components/footer/footer-one.pug

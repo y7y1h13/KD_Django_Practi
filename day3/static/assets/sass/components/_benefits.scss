@@ -1,0 +1,45 @@
+.benefits {
+  @include mq(lg) {
+    font-size: 16px;
+  }
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    &:hover {
+      .benefits__item__icon {
+        animation: pulse 1s forwards;
+      }
+    }
+    @include mq(lg) {
+      margin-bottom: emCal(16, 30);
+    }
+    &__icon {
+      width: emCal(16, 30);
+      margin-right: emCal(16, 25);
+      img {
+        @include imgCenter($type: contain);
+      }
+    }
+    &__content {
+      h5 {
+        @include typo($fsz: 1em, $fw: 500);
+        margin-bottom: emCal(16, 10);
+      }
+      p {
+        @include typo($fsz: emCal(16, 13), $lh: emCal(13, 22));
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

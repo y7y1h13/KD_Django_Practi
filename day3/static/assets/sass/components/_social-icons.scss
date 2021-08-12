@@ -1,0 +1,45 @@
+.social-icons {
+  &.-white {
+    a {
+      color: #fff;
+    }
+  }
+  &.-border {
+    ul {
+      & > li {
+        margin: 0 emCal(16, 5);
+        a {
+          height: emCal(16, 45);
+          width: emCal(16, 45);
+          text-align: center;
+          line-height: emCal(16, 45);
+          border-radius: 999px;
+          border: 1px solid setShadeColor(light);
+          display: inline-block;
+          &:hover {
+            background-color: setColor(red);
+            color: #fff;
+            border-color: transparent;
+          }
+        }
+      }
+      &--light-bg {
+        & > li {
+          a {
+            background-color: #e1e1e1;
+          }
+        }
+      }
+    }
+  }
+  ul {
+    & > li {
+      display: inline-block;
+      margin: 0 emCal(16, 10);
+      @include spaceTrim;
+      a {
+        @include link();
+      }
+    }
+  }
+}

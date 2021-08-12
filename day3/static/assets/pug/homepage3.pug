@@ -1,0 +1,12 @@
+extends base/layout.pug
+block title
+  title Homepage 3
+block header
+  include components/header/header-three.pug
+block content
+  +slider({classname: '-style-3 slider-arrow-middle', data: SLIDER.THREE})
+  include components/sections/introduction/introduction-three.pug
+  include components/sections/product-thumb/product-tab-slide.pug
+  include components/sections/introduction/introduction-four.pug
+  include components/sections/introduction/introduction-five.pug
+  include components/footer/footer-one.pug

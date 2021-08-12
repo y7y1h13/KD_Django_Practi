@@ -1,0 +1,6 @@
+mixin breadcrumb(props = {})
+  - var {title = 'Add title', children} = props;
+  .breadcrumb
+    .container
+      h2= title
+      ul!= children

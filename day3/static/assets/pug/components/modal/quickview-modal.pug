@@ -1,0 +1,13 @@
+include ../../base/variable.pug
+include ../../mixins/product-detail-content.pug
+#quick-view-modal.modal
+  .product-quickview
+    .row
+      .col-12.col-md-6
+        .product-detail__slide-one
+          .slider-wrapper
+            each item in PRODUCTS[0].images
+              .slider-item
+                img(src=item, alt="Product image")
+      .col-12.col-md-6
+        +productDetailContent({hideTab: true})

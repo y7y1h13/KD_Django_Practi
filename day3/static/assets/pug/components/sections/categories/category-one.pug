@@ -1,0 +1,13 @@
+include ../../../base/variable.pug
+.category-one
+  .container-fluid
+    .row
+      each item in CATEGORY.ONE
+        .col-12.col-md-4
+          a.category-card(href="#")
+            .category-card__background
+              img(src=item.image, alt='category image')
+            .category-card__content
+              h3= item.category
+              h5= `${item.quantity} items`
+

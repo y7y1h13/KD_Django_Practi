@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		include variable.pug
+		include ../mixins/add-to-cart-button.pug
+		include ../mixins/social-icons.pug
+		include ../mixins/section-title.pug
+		include ../mixins/slider.pug
+		include ../mixins/button.pug
+		include ../mixins/product.pug
+		include ../mixins/post.pug
+		include ../mixins/quantity-controller.pug
+		include ../mixins/product-detail-content.pug
+		include ../mixins/breadcrumb.pug
+		block title
+			title Document
+		include link.pug
+	body
+		block header
+		#content
+			block content
+				h1 Happing coding
+			include ../components/drawer/cart-drawer.pug
+			include ../components/drawer/mobile-menu-drawer.pug
+			include ../components/modal/quickview-modal.pug
+		block footer
+		include script.pug
+		

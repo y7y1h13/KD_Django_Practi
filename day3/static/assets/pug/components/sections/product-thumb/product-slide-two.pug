@@ -1,0 +1,12 @@
+include ../../../mixins/section-title.pug
+include ../../../mixins/product.pug
+include ../../../mixins/button.pug
+include ../../../base/variable.pug
+.product-slide
+  .container
+    +sectionTitle({title: 'Related product', classname: '-center', hideDecoration: true})
+    .product-slider
+      .product-slide__wrapper
+        each item in PRODUCTS.slice(0, 8)
+          .product-slide__item
+            +product({data: item})

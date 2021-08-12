@@ -1,0 +1,15 @@
+include ../../../mixins/button.pug
+.introduction-nine
+  .introduction-nine__logos
+    .container
+      .introduction-nine__logos-slide
+        - var n = 1;
+        while n < 8
+          .slide__item
+            img(src=`assets/images/introduction/IntroductionNine/${n++}.png`, alt="Brand item")
+  .container
+    .introduction-nine__content
+      h3 New items are 
+        br
+        |released weekly.
+      +button({classname: '-white', content: 'ALL NEW ITEMS'})

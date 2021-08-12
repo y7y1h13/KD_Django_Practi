@@ -1,0 +1,93 @@
+.cart-sidebar {
+  height: 100%;
+  .cart-items__wrapper {
+    height: 100%;
+    background-color: #fff;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    @include mq(md) {
+      font-size: emCal(16, 14);
+    }
+    h2 {
+      @include typo($fsz: emCal(16, 20), $fw: 600);
+      margin-bottom: emCal(20, 30);
+    }
+    .empty-noti {
+      @include typo($fsz: emCal(16, 30));
+      padding: emCal(16, 50) 0;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      padding-bottom: emCal(16, 30);
+      margin-bottom: emCal(16, 30);
+      border-bottom: 1px solid setShadeColor(light);
+      &:last-child {
+        padding-bottom: 0;
+        border: 0;
+      }
+      &__image {
+        margin-right: emCal(16, 25);
+        img {
+          @include imgCenter($height: emCal(16, 80), $width: emCal(16, 80));
+        }
+      }
+      &__info {
+        margin-right: emCal(16, 30);
+        a {
+          @include link($fsz: emCal(16, 15), $lh: emCal(15, 24), $fw: 500);
+          display: block;
+          margin-bottom: emCal(15, 10);
+        }
+        h5 {
+          @include typo($fsz: emCal(16, 15), $fw: 600);
+          display: block;
+          margin-bottom: emCal(15, 15);
+        }
+        p {
+          @include typo($fsz: emCal(16, 13), $color: setShadeColor(medium));
+        }
+      }
+      &__remove {
+        @include link(
+          $color: setShadeColor(medium),
+          $fsz: emCal(16, 15),
+          $lh: emCal(15, 20)
+        );
+        border: 1px solid setShadeColor(medium);
+        height: emCal(15, 20);
+        width: emCal(15, 20);
+        text-align: center;
+        border-radius: 999px;
+        margin-left: auto;
+        &:hover {
+          border-color: setColor(red);
+        }
+      }
+    }
+    .cart-items__total {
+      margin-top: emCal(16, 30);
+      padding-top: emCal(16, 30);
+      border-top: 1px solid setShadeColor(light);
+      margin-top: auto;
+      &__price {
+        display: flex;
+        justify-content: space-between;
+        @include typo($fsz: emCal(16, 15), $fw: 600);
+        margin-bottom: emCal(16, 30);
+        span {
+          color: setColor(red);
+        }
+      }
+      &__buttons {
+        .btn {
+          width: 100%;
+          &:first-child {
+            margin-bottom: emCal(16, 15);
+          }
+        }
+      }
+    }
+  }
+}

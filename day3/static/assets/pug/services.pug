@@ -1,0 +1,45 @@
+extends base/layout.pug
+block title
+  title Services
+block header
+  include components/header/menu/menu-five.pug
+block content
+  +breadcrumb({title: 'Services', children: '<li>Home</li><li class="active">Services</li>'})
+  .shop
+    .container
+      each item, index in SERVICES
+        .services__item(class=`${(index + 1) % 2 === 0 ? '-reverse' : ''}`)
+          .row
+            .col-12.col-md-6(class=`${(index + 1) % 2 === 0 ? "order-md-2" : '' }`)
+              .services__item__image
+                .services__item__image__background
+                  img(src='/assets/images/introduction/IntroductionThree/bg.png' alt='background')
+                .services__item__image__detail
+                  .image__item
+                    .wrapper
+                      img(data-depth='0.3' src=item.bigImgSrc alt='image')
+                  .image__item
+                    .wrapper
+                      img(data-depth='0.2' data-invert-x='true' data-invert-y='true' src=item.smallImgSrc)
+            .col-12.col-md-6(class=`${(index + 1) % 2 === 0 ? "order-md-1" : '' }`)
+              .services__item__content
+                .services__item__order
+                  h3= `0${index + 1}.`
+                h2.services__item__title= item.title
+                p.services__item__description= item.description
+                ul
+                  li
+                    i.fas.fa-check
+                    |Lorem ipsum dolor sit amet, consectetur.
+                  li
+                    i.fas.fa-check
+                    |Adipiscing elit, sed do eiusmod tempor.
+                  li
+                    i.fas.fa-check
+                    |Incididunt ut labore et dolore magna aliqua.
+                  li
+                    i.fas.fa-check
+                    |Quis ipsum suspendisse ultrices gravida.
+                +button({classname: '-white', content: 'Read more'})
+  include components/sections/call-to-action/cta-one.pug
+  include components/footer/footer-one.pug

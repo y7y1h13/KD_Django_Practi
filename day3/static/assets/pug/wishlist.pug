@@ -1,0 +1,41 @@
+extends base/layout.pug
+block title
+  title Wishlist
+block header
+  include components/header/menu/menu-five.pug
+block content
+  +breadcrumb({title: 'Wishlist', children: '<li>Home</li><li>Shop</li><li class="active">Wishlist</li>'})
+  .wishlist
+    .container
+      .wishlist__table
+        .wishlist__table__wrapper
+          table
+            colgroup
+              col(style="width: 40%")
+              col(style="width: 20%")
+              col(style="width: 20%")
+              col(style="width: 20%")
+            thead
+              tr
+                th Product
+                th Unit Price
+                th Stock
+                th
+            tbody
+              each item, index in PRODUCTS.slice(0, 2)
+                tr
+                  td
+                    .wishlist-product
+                      .wishlist-product__image
+                        img(src=item.thumbImage[0] alt=item.name)
+                      .wishlist-product__content
+                        h5= item.category
+                        a(href="/shop-fulwidth-4col.html")= item.name
+                  td= `$${item.price}.00`
+                  td= `${item.quantity === 0 ? 'In stock' : 'Out stock'}`
+                  td
+                    +button({classname: '-dark', content: 'Add to cart'})
+                    a.remove-btn(href="#")
+                      i.fal.fa-times
+  include components/sections/instagram/instagram-two.pug
+  include components/footer/footer-one.pug

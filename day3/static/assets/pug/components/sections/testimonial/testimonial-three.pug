@@ -1,0 +1,15 @@
+include ../../../base/variable.pug
+.testimonial-three
+  .container
+    .testimonial-three-slider
+      each item in TESTIMONIAL.THREE
+        .outline-none
+          .testimonial-three__item
+            p
+              i.fal.fa-quote-left
+              |Testimonial
+            h3= item.quote
+            .author-info
+              h5= item.authorName
+              span= item.liveAt
+

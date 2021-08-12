@@ -1,0 +1,103 @@
+.wishlist {
+  margin-bottom: remCal(100);
+  &__empty {
+    text-align: center;
+    padding: emCal(16, 70) 0;
+    h3 {
+      @include typo($fsz: emCal(16, 30));
+    }
+  }
+  &__table {
+    &__wrapper {
+      overflow-y: auto;
+      white-space: nowrap;
+      table {
+        width: 100%;
+        thead {
+          tr {
+            th {
+              border-bottom: 1px solid setShadeColor(light);
+              text-align: left;
+              @include typo($fsz: emCal(16, 15), $fw: 700);
+              padding: 0 emCal(16, 35) emCal(16, 40) emCal(16, 15);
+              &:first-child {
+                padding-left: 0;
+              }
+              &:last-child {
+                padding-right: 0;
+              }
+            }
+          }
+        }
+        tbody {
+          tr {
+            &:last-child {
+              td {
+                border-bottom: 0;
+              }
+            }
+            td {
+              @include typo($fsz: emCal(16, 15), $fw: 600);
+              padding: emCal(16, 35) emCal(16, 15);
+              border-bottom: 1px solid setShadeColor(light);
+              &:first-child {
+                padding-left: 0;
+                .wishlist-product {
+                  display: flex;
+                  align-items: center;
+                  &__image {
+                    flex: none;
+                    margin-right: emCal(16, 30);
+                    img {
+                      @include imgCenter(
+                        $height: emCal(16, 100),
+                        $width: emCal(16, 100)
+                      );
+                    }
+                  }
+                  &__content {
+                    h5 {
+                      @include typo(
+                        $fsz: emCal(16, 13),
+                        $color: setShadeColor(medium),
+                        $cpt: true
+                      );
+                      margin-bottom: emCal(16, 10);
+                    }
+                    a {
+                      @include link($fsz: 1em, $fw: 500);
+                    }
+                  }
+                }
+              }
+              &:last-child {
+                padding-right: 0;
+                text-align: right;
+                .btn {
+                  margin-right: emCal(14, 30);
+                }
+                .remove-btn {
+                  @include link(
+                    $color: setShadeColor(medium),
+                    $fsz: emCal(16, 15),
+                    $lh: emCal(15, 20)
+                  );
+                  border: 1px solid setShadeColor(medium);
+                  height: emCal(15, 20);
+                  width: emCal(15, 20);
+                  text-align: center;
+                  border-radius: 999px;
+                  margin-left: auto;
+                  display: inline-block;
+                  &:hover {
+                    border-color: setColor(red);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

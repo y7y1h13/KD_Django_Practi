@@ -1,0 +1,16 @@
+extends base/layout.pug
+block title
+  title About us
+block header
+  include components/header/menu/menu-five.pug
+block content
+  +breadcrumb({title: 'About us', children: '<li>Home</li><li class="active">About us</li>'})
+  .about
+    include components/sections/introduction/introduction-one.pug
+    include components/sections/introduction/introduction-eleven.pug
+    include components/sections/testimonial/testimonial-one.pug
+    include components/sections/introduction/introduction-twelve.pug
+    .mb-100
+      include components/other/benefits.pug
+  include components/sections/instagram/instagram-two.pug
+  include components/footer/footer-one.pug

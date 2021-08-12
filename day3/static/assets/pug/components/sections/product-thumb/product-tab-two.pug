@@ -1,0 +1,29 @@
+include ../../../base/variable.pug
+include ../../../mixins/section-title.pug
+include ../../../mixins/product.pug
+include ../../../mixins/button.pug
+.product-tab.-style-2
+  .container
+    .product-tab__header
+      h5 New arrivals
+      .product-tab-slide__header__controller
+        ul
+          each item, index in ['all', 'eyes', 'face', 'lips', 'set']
+            if index === 0
+              li.active
+                a(href="#")= item
+            else
+              li
+                a(href="#")= item
+        +button({content: 'View all', classname: '-white', href: 'shop-fullwidth-4col.html'})
+    .product-tab__content
+      .product-tab__content__wrapper
+        .row
+          .col-12.col-md-6
+            each item in PRODUCTS.slice(0,1)
+              +product({data: item, classname: '-inline-content'})
+          .col-12.col-md-6
+            .row
+              each item in PRODUCTS.slice(1,5)
+                .col-12.col-sm-6
+                  +product({data: item, classname: '-height-limit'})

@@ -1,0 +1,180 @@
+.cart {
+  margin-bottom: remCal(100);
+  &__table {
+    margin-bottom: remCal(70);
+    &__wrapper {
+      overflow-y: auto;
+      white-space: nowrap;
+      table {
+        width: 100%;
+        thead {
+          tr {
+            th {
+              border-bottom: 1px solid setShadeColor(light);
+              text-align: left;
+              @include typo($fsz: emCal(16, 15), $fw: 700);
+              padding: 0 emCal(16, 35) emCal(16, 40) emCal(16, 15);
+              &:first-child {
+                padding-left: 0;
+              }
+              &:last-child {
+                padding-right: 0;
+              }
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              @include typo($fsz: emCal(16, 15), $fw: 600);
+              padding: emCal(16, 35) emCal(16, 15);
+              &:first-child {
+                padding-left: 0;
+                .cart-product {
+                  display: flex;
+                  align-items: center;
+                  &__image {
+                    flex: none;
+                    margin-right: emCal(16, 30);
+                    img {
+                      @include imgCenter(
+                        $height: emCal(16, 100),
+                        $width: emCal(16, 100)
+                      );
+                    }
+                  }
+                  &__content {
+                    h5 {
+                      @include typo(
+                        $fsz: emCal(16, 13),
+                        $color: setShadeColor(medium),
+                        $cpt: true
+                      );
+                      margin-bottom: emCal(16, 10);
+                    }
+                    a {
+                      @include link($fsz: 1em, $fw: 500);
+                    }
+                  }
+                }
+              }
+              &:last-child {
+                padding-right: 0;
+                text-align: right;
+                a {
+                  @include link(
+                    $color: setShadeColor(medium),
+                    $fsz: emCal(16, 15),
+                    $lh: emCal(15, 20)
+                  );
+                  border: 1px solid setShadeColor(medium);
+                  height: emCal(15, 20);
+                  width: emCal(15, 20);
+                  text-align: center;
+                  border-radius: 999px;
+                  margin-left: auto;
+                  display: inline-block;
+                  &:hover {
+                    border-color: setColor(red);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      a {
+        @include link($fsz: emCal(16, 15), $fw: 600);
+        i {
+          margin-right: emCal(15, 10);
+          color: setColor(red);
+        }
+      }
+    }
+  }
+  &__total {
+    &__discount {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background-color: #f7f5f4;
+      padding: emCal(16, 50);
+      p {
+        max-width: emCal(16, 250);
+        margin-right: emCal(16, 60);
+        @include mq(md) {
+          max-width: 100%;
+          margin-right: 0;
+        }
+        @include typo(
+          $fsz: emCal(16, 14),
+          $color: setShadeColor(medium),
+          $lh: emCal(14, 24)
+        );
+      }
+      .input-validator {
+        flex-grow: 1;
+        form {
+          display: flex;
+          input {
+            @include input($height: emCal(16, 45));
+          }
+          .btn {
+            padding-top: 0;
+            padding-bottom: 0;
+            height: emCal(14, 45);
+            line-height: emCal(14, 45);
+          }
+        }
+      }
+    }
+    &__content {
+      background-color: #f7f5f4;
+      padding: emCal(16, 50);
+      h3 {
+        @include typo($fsz: emCal(16, 20), $fw: 600);
+        margin-bottom: emCal(20, 35);
+      }
+      table {
+        width: 100%;
+        margin-bottom: emCal(16, 15);
+        tr {
+          td,
+          th {
+            padding-bottom: emCal(15, 15);
+          }
+          th {
+            text-align: left;
+            @include typo($fsz: emCal(16, 15), $fw: 500);
+          }
+          td {
+            text-align: right;
+            @include typo($fsz: emCal(16, 15), $fw: 600);
+            &.final-price {
+              color: setColor(red);
+            }
+          }
+        }
+      }
+      .btn {
+        padding: 0;
+        height: emCal(13, 45);
+        line-height: emCal(13, 45);
+        width: 100%;
+      }
+    }
+  }
+  &__empty {
+    text-align: center;
+    padding: emCal(16, 30) 0;
+    h3 {
+      @include typo($fsz: emCal(16, 30));
+      margin-bottom: emCal(30, 30);
+    }
+  }
+}

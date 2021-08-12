@@ -1,0 +1,41 @@
+.contact {
+  margin-bottom: remCal(100);
+  &-title {
+    @include typo($fsz: emCal(16, 30), $fw: 600);
+    margin-bottom: emCal(16, 40);
+  }
+  &-info__item {
+    display: flex;
+    margin-bottom: emCal(16, 30);
+    &__icon {
+      width: emCal(16, 30);
+      @include typo($fsz: emCal(16, 18), $color: setColor(red));
+    }
+    &__detail {
+      h3 {
+        @include typo($fsz: emCal(16, 15), $fw: 600);
+        margin-bottom: emCal(15, 8);
+      }
+      p {
+        @include typo($fsz: emCal(16, 14), $lh: emCal(14, 26));
+      }
+    }
+  }
+  &-form {
+    form {
+      .input-validator {
+        margin-bottom: emCal(14, 20);
+        input {
+          @include input($height: emCal(14, 45));
+        }
+        textarea {
+          @include input;
+          resize: none;
+        }
+      }
+    }
+  }
+  &-map {
+    margin-top: emCal(16, 50);
+  }
+}

@@ -1,0 +1,784 @@
+.introduction-one {
+  margin-bottom: remCal(100);
+  @include mq(lg) {
+    font-size: 15px;
+  }
+  @include mq(md) {
+    font-size: 14px;
+  }
+  &-image {
+    position: relative;
+    height: 700px;
+    width: 100%;
+    @include mq(lg) {
+      margin-bottom: remCal(50);
+      height: 490px;
+    }
+    @include mq(md) {
+      margin-bottom: remCal(100);
+      height: 600px;
+    }
+    @include mq(sm) {
+      height: 388px;
+    }
+    &__detail {
+      img {
+        position: absolute;
+        z-index: 1;
+        &:first-child {
+          top: 0;
+          left: 0;
+          max-width: 80%;
+        }
+        &:last-child {
+          bottom: 0;
+          right: 0;
+          max-width: 60%;
+        }
+      }
+    }
+    &__background {
+      .background__item {
+        position: absolute;
+        z-index: 0;
+        img {
+          max-width: 100%;
+        }
+        &:first-child {
+          top: 24%;
+          right: -32px;
+          max-width: 70%;
+        }
+        &:last-child {
+          bottom: 15%;
+          left: -60px;
+          max-width: 80%;
+        }
+      }
+      @include mq(lg) {
+        .background__item {
+          &:last-child {
+            left: 0;
+          }
+        }
+      }
+      @include mq(md) {
+        .background__item {
+          &:first-child {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+  &-content {
+    padding-left: emCal(16, 50);
+    @include mq(md) {
+      padding-left: 0;
+    }
+    h5 {
+      @include typo($fsz: emCal(16, 15), $up: true, $fw: 500);
+      letter-spacing: emCal(15, 5);
+      margin-bottom: emCal(15, 30);
+      span {
+        color: setColor(red);
+      }
+    }
+
+    p {
+      @include typo(
+        $fsz: emCal(16, 15),
+        $lh: emCal(15, 30),
+        $fw: 400,
+        $color: setShadeColor(medium)
+      );
+      margin-bottom: emCal(15, 30);
+    }
+  }
+}
+
+.introduction-two {
+  padding-top: emCal(16, 100);
+  position: relative;
+  margin-bottom: remCal(100);
+  @include mq(md) {
+    font-size: 14px;
+  }
+  .video-frame {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 80%;
+    @include mq(xxl) {
+      max-width: 60%;
+      height: auto !important;
+    }
+    @include mq(md) {
+      max-width: 70%;
+      width: 100% !important;
+    }
+    &__poster {
+      img {
+        @include imgCenter;
+      }
+    }
+    .btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: setColor(red);
+    }
+  }
+  &-content {
+    background-color: #f7f5f4;
+    padding: emCal(16, 70) 0;
+    @include mq(xl) {
+      padding-top: 30%;
+    }
+    @include mq(md) {
+      padding-top: 40%;
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: emCal(16, 50);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      span {
+        @include typo($fsz: emCal(16, 15));
+        flex-basis: emCal(16, 40);
+      }
+      &.active {
+        a {
+          &:after {
+            bottom: 0;
+          }
+        }
+      }
+      a {
+        @include link(
+          $hvr-color: setShadeColor(dark),
+          $fsz: emCal(16, 30),
+          $fw: 600
+        );
+        display: block;
+        position: relative;
+        overflow: hidden;
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -100%;
+          left: 0;
+          background-color: #f2646061;
+          height: emCal(16, 8);
+          width: 100%;
+          z-index: 0;
+          transition: $transition;
+        }
+      }
+      p {
+        width: 100%;
+        // padding-left: emCal(15, 40);
+        @include typo($fsz: emCal(16, 15), $color: setShadeColor(medium));
+        margin-top: emCal(16, 15);
+      }
+    }
+  }
+}
+
+.introduction-three {
+  margin-bottom: remCal(100);
+  &__image {
+    position: relative;
+    height: 540px;
+    width: 100%;
+    @include mq(md) {
+      margin-bottom: emCal(14, 50);
+    }
+    &__background {
+      position: absolute;
+      top: 0;
+      left: emCal(16, -120);
+      img {
+        @include imgCenter($type: contain);
+      }
+      @include mq(lg) {
+        max-width: 100%;
+        left: 0;
+      }
+    }
+    &__detail {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .image__item {
+        position: absolute;
+        img {
+          @include imgCenter($type: contain);
+        }
+        &:first-child {
+          top: 0;
+          right: 0;
+          @include mq(md) {
+            max-width: 80%;
+          }
+        }
+        &:last-child {
+          @include mq(md) {
+            max-width: 80%;
+          }
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+  &__content {
+    padding-left: emCal(16, 60);
+    @include mq(md) {
+      padding-left: 0;
+    }
+    h5 {
+      @include typo($fsz: emCal(16, 15), $up: true, $fw: 500);
+      letter-spacing: emCal(15, 5);
+      margin-bottom: emCal(15, 30);
+      span {
+        color: setColor(red);
+      }
+    }
+    h3 {
+      @include typo($fsz: emCal(16, 42), $lh: emCal(42, 55), $fw: 600);
+      span {
+        color: setColor(red);
+      }
+      margin-bottom: emCal(42, 40);
+    }
+    .more-description {
+      display: flex;
+      margin-bottom: emCal(16, 40);
+      img {
+        @include imgCenter($width: emCal(16, 60), $type: contain);
+        margin-right: emCal(16, 30);
+      }
+      span {
+        @include typo($fsz: emCal(16, 20), $fw: 600, $lh: emCal(20, 28));
+      }
+    }
+    p {
+      @include typo(
+        $fsz: emCal(16, 15),
+        $lh: emCal(15, 30),
+        $fw: 400,
+        $color: setShadeColor(medium)
+      );
+      margin-bottom: emCal(15, 30);
+    }
+  }
+}
+
+.introduction-four {
+  margin-bottom: remCal(100);
+  &__item {
+    position: relative;
+    @include mq(md) {
+      margin-bottom: emCal(14, 50);
+    }
+    @include mq(sm) {
+      margin-bottom: emCal(14, 30);
+    }
+    &:hover {
+      .introduction-four__item__image {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__content {
+      position: absolute;
+      background-color: #fff;
+      padding: emCal(16, 50) 0;
+      max-width: 100%;
+      z-index: 2;
+      @include mq(sm) {
+        max-width: 90%;
+      }
+      h3 {
+        @include typo($fsz: emCal(16, 50), $fw: 600, $lh: emCal(50, 60));
+        margin-bottom: emCal(50, 10);
+        span {
+          color: setColor(red);
+        }
+      }
+      h5 {
+        @include typo($fsz: emCal(16, 30), $fw: 600);
+        margin-bottom: emCal(30, 35);
+      }
+      a {
+        font-weight: 700;
+      }
+    }
+    &__image {
+      overflow: hidden;
+      @include mq(md) {
+        max-width: 80%;
+      }
+      @include mq(sm) {
+        max-width: 100%;
+      }
+      img {
+        transition: 0.75s ease-out;
+        @include imgCenter($type: contain);
+      }
+    }
+    &.-style-1 {
+      padding-top: emCal(16, 200);
+      .introduction-four__item__content {
+        top: emCal(16, 50);
+        left: 0;
+      }
+    }
+    &.-style-2 {
+      padding-bottom: emCal(16, 200);
+      .introduction-four__item__content {
+        bottom: 0;
+        left: 0;
+        padding-right: emCal(16, 50);
+      }
+      .introduction-four__item__image {
+        @include mq(md) {
+          margin-left: auto;
+        }
+      }
+    }
+    &.-style-3 {
+      padding-top: emCal(16, 100);
+      @include mq(md) {
+        padding-top: 0;
+      }
+      .introduction-four__item__content {
+        padding-right: emCal(16, 50);
+        top: 60%;
+        transform: translateY(-50%);
+      }
+      .introduction-four__item__image {
+        max-width: 80%;
+        margin-left: auto;
+      }
+    }
+    &.-style-4 {
+      padding-bottom: emCal(16, 180);
+      .introduction-four__item__content {
+        bottom: 0;
+        right: 0;
+        padding-left: emCal(16, 50);
+      }
+    }
+  }
+}
+
+.introduction-five {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: emCal(16, 700);
+  background: {
+    position: center;
+    size: cover;
+    attachment: fixed;
+  }
+  &__content {
+    text-align: center;
+    h2 {
+      @include typo(
+        $fsz: emCal(16, 90),
+        $lh: emCal(90, 110),
+        $color: #fff,
+        $fw: 700
+      );
+      margin-bottom: emCal(90, 35);
+      @include mq(md) {
+        font-size: emCal(14, 50);
+      }
+    }
+  }
+}
+
+.introduction-six {
+  margin-bottom: remCal(70);
+  &__wrapper {
+    &__item {
+      margin-bottom: emCal(16, 45);
+      &:hover {
+        .introduction-six__wrapper__item {
+          &__image {
+            img {
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+      &__image {
+        height: emCal(16, 150);
+        width: emCal(16, 150);
+        margin: 0 auto;
+        border-radius: 999px;
+        overflow: hidden;
+        margin-bottom: emCal(16, 35);
+        img {
+          @include imgCenter;
+          transition: $transition;
+        }
+      }
+      &__content {
+        text-align: center;
+        a {
+          @include link($fsz: emCal(16, 20), $fw: 700, $lh: emCal(20, 32));
+          margin-bottom: emCal(20, 10);
+        }
+        p {
+          @include typo(
+            $fsz: emCal(16, 14),
+            $lh: emCal(14, 24),
+            $color: setShadeColor(medium)
+          );
+        }
+      }
+    }
+  }
+}
+
+.introduction-seven {
+  margin-bottom: remCal(100);
+  &__wrapper {
+    width: 100%;
+    position: relative;
+    background-color: #f4f6f2;
+    &__content {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      &__detail {
+        @include mq(lg) {
+          padding: emCal(14, 50) 0;
+        }
+      }
+      @include mq(lg) {
+        position: unset;
+        transform: translateY(0);
+      }
+    }
+    &__image {
+      max-width: 50%;
+      img {
+        @include imgCenter;
+      }
+      @include mq(xxl) {
+        img {
+          @include imgCenter($height: 600px);
+        }
+      }
+      @include mq(xl) {
+        max-width: 25%;
+        height: 600px;
+      }
+      @include mq(lg) {
+        display: none;
+      }
+    }
+    &.-top {
+      .introduction-seven__wrapper__image {
+        margin-left: auto;
+      }
+      .introduction-seven__wrapper__content {
+        &__detail {
+          padding-right: emCal(16, 100);
+          @include mq(lg) {
+            padding-right: 0;
+          }
+          h5 {
+            @include typo(
+              $fsz: emCal(16, 15),
+              $color: setColor(red),
+              $up: true
+            );
+            letter-spacing: emCal(15, 3);
+            margin-bottom: emCal(15, 30);
+          }
+          h3 {
+            @include typo($fsz: emCal(16, 60), $fw: 600, $color: setColor(red));
+            margin-bottom: emCal(60, 40);
+          }
+          p {
+            @include typo($fsz: emCal(16, 14), $lh: emCal(14, 24));
+            margin-bottom: emCal(14, 40);
+          }
+        }
+      }
+    }
+    &.-bottom {
+      .introduction-seven__wrapper__content {
+        &__detail {
+          padding-left: emCal(16, 100);
+          @include mq(lg) {
+            padding-left: 0;
+          }
+        }
+        .accordion {
+          margin-bottom: emCal(16, 40);
+          &-content {
+            p {
+              @include typo(
+                $fsz: emCal(16, 14),
+                $lh: emCal(14, 24),
+                $color: setShadeColor(medium)
+              );
+            }
+          }
+        }
+        .quantity-group {
+          display: flex;
+          background-color: #fff;
+
+          &__controller {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            padding: 0 emCal(16, 30);
+            @include mq(md) {
+              padding: 0 emCal(16, 15);
+            }
+            span {
+              margin-right: emCal(16, 30);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.introduction-eight {
+  margin-bottom: remCal(50);
+  &__content {
+    &__item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: emCal(16, 50);
+      &__image {
+        margin-right: emCal(16, 30);
+        width: emCal(16, 70);
+        flex: none;
+        img {
+          @include imgCenter($type: contain);
+        }
+      }
+      &__content {
+        h3 {
+          @include typo($fsz: emCal(16, 18), $fw: 600);
+          margin-bottom: 1em;
+        }
+        p {
+          @include typo(
+            $fsz: emCal(16, 14),
+            $lh: emCal(16, 24),
+            $color: setShadeColor(medium)
+          );
+        }
+      }
+    }
+  }
+  &__image {
+    @include mq(lg) {
+      display: none;
+    }
+    @include mq(sm) {
+      margin-bottom: emCal(16, 50);
+      display: block;
+    }
+    img {
+      @include imgCenter;
+    }
+  }
+}
+
+.introduction-nine {
+  margin-bottom: remCal(100);
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    @include link($fsz: emCal(16, 30), $color: setShadeColor(medium));
+    &.slick-next {
+      right: 0;
+    }
+    &.slick-prev {
+      left: 0;
+    }
+  }
+  &__logos {
+    background-color: #f7f5f4;
+    padding-top: remCal(100);
+    padding-bottom: remCal(350);
+    .slide__item {
+      height: emCal(16, 70);
+      outline: 0;
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        @include imgCenter($type: contain);
+      }
+    }
+  }
+  &__content {
+    margin-top: emCal(16, -250);
+    background: {
+      image: url("../images/introduction/IntroductionNine/bg.png");
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    }
+    text-align: center;
+    padding: emCal(16, 100) 0;
+    h3 {
+      @include typo(
+        $fsz: emCal(16, 70),
+        $color: #fff,
+        $lh: emCal(70, 90),
+        $fw: 700
+      );
+      margin-bottom: emCal(70, 40);
+      @include mq(md) {
+        font-size: emCal(16, 40);
+        line-height: emCal(40, 60);
+      }
+    }
+  }
+}
+
+.introduction-ten {
+  position: inherit;
+  margin-top: -100px;
+  z-index: 1;
+  &__wrapper {
+    display: grid;
+    grid-template-areas:
+      "p1 p2 p4"
+      "p1 p3 p4";
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: emCal(16, 20);
+    @include mq(lg) {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "p1 p2"
+        "p1 p4"
+        "p3 p4";
+    }
+    @include mq(md) {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "p1"
+        "p2"
+        "p3"
+        "p4";
+    }
+    &__item {
+      &:nth-child(1) {
+        grid-area: p1;
+        .introduction-ten__banner {
+          &__content {
+            padding-top: emCal(16, 400);
+            padding-bottom: emCal(16, 30);
+          }
+        }
+      }
+      &:nth-child(2) {
+        grid-area: p2;
+        .introduction-ten__banner {
+          &__content {
+            padding-top: emCal(16, 75);
+            padding-bottom: emCal(16, 75);
+          }
+        }
+      }
+      &:nth-child(3) {
+        grid-area: p3;
+        .introduction-ten__banner {
+          &__content {
+            padding-top: emCal(16, 75);
+            padding-bottom: emCal(16, 75);
+          }
+        }
+      }
+      &:nth-child(4) {
+        grid-area: p4;
+        .introduction-ten__banner {
+          &__content {
+            padding-top: emCal(16, 400);
+            padding-bottom: emCal(16, 30);
+          }
+        }
+      }
+    }
+  }
+  &__banner {
+    overflow: hidden;
+    background: {
+      position: center;
+      size: cover;
+      repeat: no-repeat;
+    }
+    display: block;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    @include link($color: #fff, $hvr-color: #fff);
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition: $transition;
+      @include imgCenter;
+    }
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+    &__content {
+      padding: 0 emCal(16, 40);
+
+      h5 {
+        @include typo($fsz: emCal(16, 14), $color: #fff, $fw: 600, $up: true);
+        letter-spacing: emCal(14, 2.8);
+        margin-bottom: emCal(14, 20);
+      }
+      h3 {
+        @include typo(
+          $fsz: emCal(16, 42),
+          $lh: emCal(40, 70),
+          $color: #fff,
+          $fw: 400
+        );
+        font-family: "Braga";
+        margin-bottom: emCal(50, 20);
+      }
+      p {
+        color: #fff !important;
+      }
+    }
+  }
+}

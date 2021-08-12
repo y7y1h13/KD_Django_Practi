@@ -1,0 +1,48 @@
+include ../../../base/variable.pug
+include ../../../mixins/section-title.pug
+include ../../../mixins/button.pug
+include ../../../mixins/quantity-controller.pug
+.introduction-seven
+  .introduction-seven__wrapper.-top
+    .introduction-seven__wrapper__content
+      .container
+        .row.no-gutters
+          .col-12.col-lg-9.col-xl-6
+            .introduction-seven__wrapper__content__detail
+              h5 Put it in Neutral
+              +sectionTitle({hideDecoration: true, title: 'Enlightened Beauty'})
+              h3 $125.00
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida lacus vel facilisis.{&quot; &quot;}
+              +button({classname: '-dark', content: 'More info', href: '#'})
+    .introduction-seven__wrapper__image
+      img(src='assets/images/introduction/introductionseven/1.png' alt='Section image')
+  .introduction-seven__wrapper.-bottom
+    .introduction-seven__wrapper__image
+      img(src='assets/images/introduction/introductionseven/2.png' alt='Section image')
+    .introduction-seven__wrapper__content
+      .container
+        .row.no-gutters
+          .col-12.col-lg-9.col-xl-6.ml-auto
+            .introduction-seven__wrapper__content__detail
+              +sectionTitle({hideDecoration: true, title: 'User Instructions'})
+              dl.accordion
+                .accordion-group
+                  dt.accordion-header.active
+                    a(href='#') Step 1
+                  dd.accordion-content.active
+                    p Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.
+                .accordion-group
+                  dt.accordion-header
+                    a(href='#') Step 2
+                  dd.accordion-content
+                    p Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+                .accordion-group
+                  dt.accordion-header
+                    a(href='#') Step 3
+                  dd.accordion-content
+                    p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.
+              .quantity-group
+                .quantity-group__controller
+                  span Quantity:
+                  quantity 1
+                +button({classname: '-dark', content: 'Purchase', href: '#'})

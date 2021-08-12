@@ -1,0 +1,26 @@
+$colors: (
+  red: #f26460,
+  darkRed: #de1339,
+  star: #ecba0b,
+  blue: #1a7be9,
+);
+
+$shades: (
+  dark: #111,
+  medium: #888,
+  light: #e1e1e1,
+);
+
+$breakpoint: (
+  sm: " 576px",
+  md: "768px",
+  lg: "992px",
+  xl: "1170px",
+  xxl: "1400px",
+  xxxl: "1770px",
+);
+
+$rem-baseline: 16;
+$transition: 0.2s ease-in-out;
+$prefixes: (webkit, moz, ms, o);
+$cambay: "Cambay", sans-serif;

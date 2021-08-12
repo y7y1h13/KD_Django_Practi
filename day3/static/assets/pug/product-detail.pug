@@ -1,0 +1,27 @@
+extends base/layout.pug
+block title
+  title Product Detail
+block header
+  include components/header/menu/menu-five.pug
+block content
+  +breadcrumb({title: 'Shop', children: '<li>Home</li><li>Shop</li><li class="active">Product Detail</li>'})
+  .shop
+    .container
+      .product-detail__wrapper
+        .row
+          .col-12.col-md-6
+            .product-detail__slide-two
+              .product-detail__slide-two__big
+                each item, index in PRODUCTS[0].images
+                  .slider__item
+                    img(src=item, alt="Product image")
+              .product-detail__slide-two__small
+                each item, index in PRODUCTS[0].images
+                  .slider__item
+                    img(src=item, alt="Product image")
+          .col-12.col-md-6
+            .product-detail__content
+              +productDetailContent({data: PRODUCTS[0]})
+  include components/sections/product-thumb/product-slide-two.pug
+  include components/sections/instagram/instagram-two.pug
+  include components/footer/footer-one.pug

@@ -1,0 +1,308 @@
+.post-card-one {
+  display: flex;
+  align-items: flex-start;
+  padding: emCal(16, 40);
+  box-shadow: 0px 1px 5px 0 #dfdfe0;
+  background-color: #fff;
+  transition: $transition;
+  &:hover {
+    box-shadow: 0px 3px 20px 0 #dfdfe0;
+  }
+  &__date {
+    padding: emCal(16, 10) emCal(16, 15);
+    background-color: setShadeColor(dark);
+    margin-right: emCal(16, 40);
+    h5 {
+      @include typo($color: #fff, $fsz: 1em, $fw: 500);
+      margin-bottom: emCal(16, 5);
+    }
+    p {
+      @include typo($color: #fff, $fsz: emCal(16, 13));
+    }
+  }
+  &__content {
+    &__info {
+      margin-bottom: emCal(16, 15);
+      p {
+        @include typo($fsz: emCal(16, 13), $color: setShadeColor(medium));
+        display: inline-block;
+        span {
+          color: setShadeColor(dark);
+        }
+        &:after {
+          content: "/";
+          margin: 0 emCal(16, 10);
+        }
+      }
+      a {
+        @include link($fsz: emCal(16, 13));
+        display: inline-block;
+      }
+    }
+    &__title {
+      @include link($fsz: emCal(16, 20), $fw: 600, $lh: emCal(20, 26));
+      @include overflowText(2);
+    }
+  }
+}
+
+.post-card-two {
+  &:hover {
+    .post-card-two__image {
+      img {
+        transform: scale(1.05);
+      }
+      .post-card-two__info {
+        &__date {
+          background-color: setColor(red);
+          color: #fff;
+        }
+      }
+    }
+  }
+  &__image {
+    position: relative;
+    margin-bottom: emCal(16, 30);
+    overflow: hidden;
+    img {
+      @include imgCenter;
+      transition: $transition;
+    }
+    .post-card-two__info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      &__date {
+        padding: emCal(16, 10) emCal(16, 15);
+        background-color: setShadeColor(dark);
+        transition: $transition;
+        h5 {
+          @include typo($color: #fff, $fsz: 1em, $fw: 500);
+          margin-bottom: emCal(16, 5);
+        }
+        p {
+          @include typo($color: #fff, $fsz: emCal(16, 13));
+        }
+      }
+      &__detail {
+        background-color: #fff;
+        margin-right: emCal(16, 20);
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        padding: 0 emCal(16, 20);
+        p {
+          @include typo($fsz: emCal(16, 13), $color: setShadeColor(medium));
+          span {
+            color: setShadeColor(dark);
+          }
+          &:after {
+            content: "/";
+            margin: 0 emCal(16, 10);
+          }
+        }
+        a {
+          @include link($fsz: emCal(16, 13));
+        }
+      }
+    }
+  }
+  &__content {
+    a {
+      @include link(
+        $hvr-color: setShadeColor(dark),
+        $fsz: emCal(16, 20),
+        $fw: 600,
+        $lh: emCal(20, 26)
+      );
+      @include overflowText(2);
+      margin-bottom: emCal(20, 22);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    p {
+      @include typo($fsz: emCal(16, 15), $lh: emCal(15, 27));
+      @include overflowText(2);
+    }
+  }
+}
+
+.post-card-three {
+  display: flex;
+  &:hover {
+    .post-card-three__image {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+  &__image {
+    margin-right: emCal(16, 25);
+    overflow: hidden;
+    flex: none;
+    img {
+      @include imgCenter($height: emCal(16, 90), $width: emCal(16, 90));
+      transition: $transition;
+    }
+  }
+  &__content {
+    a {
+      @include link($lh: emCal(16, 21), $fw: 600);
+      @include overflowText(2);
+      margin-bottom: emCal(16, 10);
+    }
+    p {
+      @include typo($fsz: emCal(16, 13), $color: setShadeColor(medium));
+    }
+  }
+}
+
+.post-card-featured {
+  position: relative;
+  &:hover {
+    .post-card-featured__image {
+      img {
+        transform: scale(1.05);
+      }
+    }
+    .post-card-featured__content {
+      &__date {
+        background-color: setColor(red);
+        color: #fff;
+      }
+    }
+  }
+  &__image {
+    overflow: hidden;
+    height: emCal(16, 385);
+    position: inherit;
+    z-index: -1;
+    img {
+      @include imgCenter;
+      transition: $transition;
+    }
+  }
+  &__content {
+    background-color: #fff;
+    margin-top: emCal(16, -40);
+    margin-right: emCal(16, 30);
+    padding: emCal(16, 40) emCal(16, 50) emCal(16, 20) 0;
+    display: flex;
+    align-items: flex-start;
+    &__date {
+      padding: emCal(16, 10) emCal(16, 15);
+      background-color: setShadeColor(dark);
+      transition: $transition;
+      margin-right: emCal(16, 40);
+      h5 {
+        @include typo($color: #fff, $fsz: 1em, $fw: 500);
+        margin-bottom: emCal(16, 5);
+      }
+      p {
+        @include typo($color: #fff, $fsz: emCal(16, 13));
+      }
+    }
+    &__detail {
+      .post-card-featured__info {
+        display: flex;
+        margin-bottom: emCal(16, 10);
+        p {
+          @include typo($fsz: emCal(16, 13), $color: setShadeColor(medium));
+          span {
+            color: setShadeColor(dark);
+          }
+          &:after {
+            content: "/";
+            margin: 0 emCal(16, 10);
+          }
+        }
+        a {
+          @include link($fsz: emCal(16, 13));
+        }
+      }
+      .post-card-featured-title {
+        @include link($fsz: emCal(16, 24), $lh: emCal(24, 31), $fw: 600);
+        display: block;
+        margin-bottom: emCal(24, 30);
+      }
+      .post-card-featured-description {
+        @include typo($fsz: emCal(16, 15), $lh: emCal(15, 27));
+      }
+    }
+  }
+}
+
+.post-card-five {
+  display: flex;
+  &:hover {
+    .post-card-five__date {
+      background-color: setColor(red);
+    }
+  }
+  &__date {
+    padding: emCal(16, 10) emCal(16, 15);
+    background-color: setShadeColor(dark);
+    margin-right: emCal(16, 40);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: $transition;
+    h5 {
+      @include typo($color: #fff, $fsz: 1em, $fw: 500);
+      margin-bottom: emCal(16, 5);
+    }
+    p {
+      @include typo($color: #fff, $fsz: emCal(16, 13));
+    }
+  }
+  &__image {
+    flex: 1 1 40%;
+    max-width: 40%;
+    margin-right: emCal(16, 30);
+    position: relative;
+    img {
+      @include imgCenter;
+    }
+  }
+  &__content {
+    flex: 1 1 60%;
+    max-width: 60%;
+    &__info {
+      display: flex;
+      margin-bottom: emCal(16, 15);
+      p {
+        @include typo($fsz: emCal(16, 13), $color: setShadeColor(medium));
+        span {
+          color: setShadeColor(dark);
+        }
+        &:after {
+          content: "/";
+          margin: 0 emCal(16, 10);
+        }
+      }
+      a {
+        @include link($fsz: emCal(16, 13));
+      }
+    }
+    &__title {
+      @include link(
+        $hvr-color: setShadeColor(dark),
+        $fsz: emCal(16, 20),
+        $fw: 600,
+        $lh: emCal(20, 26)
+      );
+      @include overflowText(2);
+      margin-bottom: emCal(20, 15);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &__description {
+      @include typo($fsz: emCal(16, 15), $lh: emCal(15, 27));
+      @include overflowText(2);
+    }
+  }
+}

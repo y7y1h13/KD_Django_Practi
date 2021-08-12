@@ -1,0 +1,9 @@
+include ../../base/variable.pug
+.product-quickview
+  .row
+    .col-12.col-md-6
+      .product-detail__slide-one
+        each item in PRODUCTS[0].images
+          .slider__item
+            img(src=item, alt="Product image")
+    .col-12.col-md-6

@@ -1,0 +1,28 @@
+include ../../../mixins/button.pug
+.cta.-style-2(style='background-image: url("assets/images/cta/CTATwo/1.png")')
+  .container
+    .row
+      .col-12
+        .cta__form
+          h3 Don’t Wait Any Longer! <br/> Give 55% Off Now!
+        form.validated-form.cta__form__detail
+          .row
+            .col-12.col-md-6
+              .input-validator
+                input(type="text" placeholder="Name" name="name" required)
+            .col-12.col-md-6
+              .input-validator
+                input(type="text" placeholder="Phone" name="phone" required)
+            .col-12.col-md-6
+              .input-validator
+                input(type="text" placeholder="Your address" name="address" required)
+            .col-12.col-md-6
+              .input-validator
+                select.customed-select.required(name="date")
+                  option(value="" hidden) Choose a data
+                  each item in ["product a", "product b", "product c"]
+                    option(value=item)= item
+            .col-12
+              .input-validator
+                textarea(type="text" placeholder="Message" name="message")
+          +button({type: 'button', classname: '-dark' , content: 'Send order now'})

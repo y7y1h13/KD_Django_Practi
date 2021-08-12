@@ -1,0 +1,12 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+.container-full-half {
+  max-width: 1700px;
+  @include make-container($gutter: 70px);
+  @include media-breakpoint-down(lg) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

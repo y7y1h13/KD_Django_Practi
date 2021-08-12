@@ -1,0 +1,34 @@
+include ../../../mixins/rate.pug
+include ../../../mixins/section-title.pug
+include ../../../base/variable.pug
+.testimonial
+  +sectionTitle({title: 'What People Say?', subTitle: 'TESTIMONIAL', classname: '-center', style: 'margin-bottom: 3.125rem'})
+  .container
+    .testimonial-slider
+      .row
+        .col-12.col-md-6
+          .slide-nav
+            .slide-nav__wrapper
+              each item, index in TESTIMONIAL.ONE
+                .slide-nav__item(key=index)
+                  img(src=item.image, alt="Customer avatar")
+        .col-12.col-md-6
+          .slide-for
+            .slide-for__wrapper
+              each item in TESTIMONIAL.ONE
+                .slide-for__item
+                  .slide-for__item__header
+                    .quote-icon
+                      i.fas.fa-quote-right
+                    .customer__info
+                      h3= item.name
+                      h5= item.city
+                    +rate({value: item.rate})
+                  p.slide-for__item__content= item.review
+            .testimonial-one__slider-control
+              a(href="#").prev
+                i.far.fa-angle-left 
+                |Prev
+              a(href="#").next
+                |Next
+                i.far.fa-angle-right 

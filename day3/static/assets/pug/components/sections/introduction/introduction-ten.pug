@@ -1,0 +1,13 @@
+include ../../../base/variable.pug
+include ../../../mixins/button.pug
+.introduction-ten
+  .container
+    .introduction-ten__wrapper
+      each item in INTRODUCTION.TEN
+        .introduction-ten__wrapper__item
+          a.introduction-ten__banner(href="shop-fullwidth-4col.html")
+            img(src= item.background, alt="Banner background")
+            .introduction-ten__banner__content
+              h5= item.subTitle
+              h3= item.title
+              p.btn.-transparent.-underline(href="#") Shop now

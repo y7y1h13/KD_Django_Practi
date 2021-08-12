@@ -1,0 +1,16 @@
+include ../../../mixins/section-title.pug
+include ../../../base/variable.pug
+.team-one
+  .container
+    +sectionTitle({title: 'Professional team', classname: '-center'})
+    .team-one-slider
+      each item in TEAM
+        .slider__item
+          div(class='team-card')
+            div(class='team-card__avatar')
+              img(src=item.image alt=item.name)
+            div(class='team-card__content')
+              h3= item.name
+              h5= item.position
+              p= item.quote
+              socialicons

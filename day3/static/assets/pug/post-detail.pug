@@ -1,0 +1,84 @@
+extends base/layout.pug
+block title
+  title Post detail
+block header
+  include components/header/menu/menu-five.pug
+block content
+  .post
+    .post__cover
+      img(src=BLOG[0].coverImage alt=BLOG[0].title)
+    .post__body
+      .container
+        .row
+          .col-12.col-md-3
+            include components/blog/blog-sidebar.pug
+          .col-12.col-md-9
+            .post-content
+              .post-content__header
+                .post-content__header__date
+                  h5 05
+                  p Feb
+                .post-content__header__content
+                  .post_content__info
+                    p by 
+                      span= BLOG[0].author
+                    a(href="#")= BLOG[0].category
+                  h2= BLOG[0].title
+              .post-content__body
+                .post-paragraph Pampering our skin and while there is a huge possibility that we have done absolutely nothing towards it. But there is something about grandma's tips that create a sense of credibility one could always fall back upon.
+                .post-paragraph
+                  span Wash your face twice 
+                  |Let's start with the basics. To have a healthy and clear skin you must wash whatever has gotten accumulated on the surface of your skin.
+                .post-paragraph
+                  span Eat healthy 
+                  |-'you are what you eat'. It's as simple as it sounds. All that caffeine that you think your body yearns to keep you awake is eventually going to take a bad toll on your skin. In fact, whatever you eat has a direct impact on your skin.
+                img.post-image( src="/assets/images/blog/post_img.png" alt='post image')
+                .post-paragraph
+                  span Drink loads of water -
+                  |I cannot emphasize this point enough. One thing that you cannot skip upon is drinking 3 litres of water each day regardless of the weather. Water is a boon sent from heaven just for your skin. Drinking water can help you flush out toxins which clear all the pimples and bumps from the surface of your skin.
+                .post-paragraph
+                  span Have a skin regime - 
+                  |Even if it just includes washing your face and moisturizing it have a skin regime. Having a skin regime is similar to having a balanced diet for your skin.
+                .post-quote
+                  h5 "Avoid having an erratic sleep pattern and do not let your work create a lot of stress for you either."
+                  .post-quote__author
+                    i.fas.fa-quote-left
+                    p Trevor Lawson
+                .post-paragraph
+                  span Sleeping beauty - 
+                  |The consequences of your bad lifestyle habits are quite evident on your skin if you don't improve. Having a sound sleep of 8 hours is the least one could do to have a healthy and glowing skin.
+              .post-content__footer
+                .post-content__footer__tags
+                  span Tag:
+                    each item in BLOG[0].tags
+                      +button({classname: '-light', content: item})
+                .post-content__footer__share
+                  span Share:
+                  +socialIcons({colored: true})
+              .post-content__actions
+                .post-content__actions__change
+                  a.change-post-btn.-prev(href="#")
+                    i.fas.fa-angle-left
+                    | Prev Posts
+                  a.change-post-btn.-next(href='#')
+                    | Next Posts
+                    i.fas.fa-angle-right
+                .post-content__actions__comment
+                  form
+                    h5 Leave a comment
+                    .row
+                      .col-12.col-md-4
+                        .input-validator
+                          input(type='text' name='name' placeholder='Name')
+                      div.col-12.col-md-4
+                        div.input-validator
+                          input(type='text' name='email' placeholder='Email')
+                      div.col-12.col-md-4
+                        div.input-validator
+                          input(type='text' name='website' placeholder='Website')
+                      div.col-12
+                        div.input-validator
+                          textarea(name='comment' placeholder='Comment' rows='5')
+                    +button({classname: '-red', content: 'Submit comment'}) 
+  include components/sections/instagram/instagram-two.pug
+  include components/footer/footer-one.pug

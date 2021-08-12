@@ -1,0 +1,65 @@
+.top-nav {
+  background-color: setShadeColor(dark);
+  padding: emCal(16, 12) 0;
+  @include mq(md) {
+    display: none;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .top-nav-promo {
+      @include typo($color: #fff, $fsz: emCal(16, 13));
+    }
+    .top-nav-selections {
+      display: flex;
+      align-items: center;
+      &__item {
+        select {
+          @include typo($fsz: emCal(16, 13), $lh: normal, $color: #fff);
+          margin-right: emCal(13, 30);
+        }
+        a {
+          @include link(
+            $color: #fff,
+            $hvr-color: setShadeColor(light),
+            $fsz: emCal(16, 13)
+          );
+        }
+      }
+    }
+  }
+  &.-style-2 {
+    .top-nav__wrapper {
+      &-promo {
+        @include mq(lg) {
+          display: none;
+        }
+      }
+      &__quick-links {
+        ul {
+          li {
+            display: inline-block;
+            a {
+              @include link(
+                $fsz: emCal(16, 13),
+                $color: #fff,
+                $hvr-color: setShadeColor(light)
+              );
+            }
+            &::after {
+              content: "|";
+              margin: 0 emCal(13, 10);
+              color: #fff;
+            }
+            &:last-child {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

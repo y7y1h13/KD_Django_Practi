@@ -1,0 +1,22 @@
+mixin slider(props = {})
+  - var {classname, data} = props;
+  div(class=`slider ${classname || ''}`)
+    .slider__carousel
+      each item, index in data
+        div(class=`slider__carousel__item slider-${index + 1}`)
+          .container
+            .slider-background
+              img.slider-background(src=`${item.image}`, alt="Slider background")
+            .slider-content
+              if item.subTitle
+                h5.slider-content__subtitle(data-animation-in="fadeInUp" data-animation-delay="0.1")= item.subTitle
+              if item.title
+              h1.slider-content__title(data-animation-in="fadeInUp" data-animation-delay="0.2")
+                if item.title.span
+                  span!= item.title.span
+                  br
+                != `${item.title.main}`
+              if item.description 
+                p.slider-content__description(data-animation-in="fadeInUp" data-animation-delay="0.3")= `${item.description}`
+              div(data-animation-in="fadeInUp" data-animation-out="fadeInDown" data-animation-delay="0.4")
+                +button({classname:  "-" + item.btn.color ,type: 'link', content: item.btn.content, href: '#'})

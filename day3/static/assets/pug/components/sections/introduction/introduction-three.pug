@@ -1,0 +1,28 @@
+include ../../../mixins/button.pug
+.introduction-three
+  .container
+    .row.align-items-center
+      .col-12.col-md-6
+        .introduction-three__image
+          .introduction-three__image__background
+            img(src="assets/images/introduction/IntroductionThree/bg.png", alt="background")
+          .introduction-three__image__detail
+            .image__item
+              .wrapper
+                img(data-depth="0.3", src="assets/images/introduction/IntroductionThree/img-1.png", alt="image")
+            .image__item
+              .wrapper
+                img(data-depth="0.8", src="assets/images/introduction/IntroductionThree/img-2.png", alt="image")
+      .col-12.col-md-6
+        .introduction-three__content
+          h5 About Eliah
+          h3
+            span Natural
+            |skian care
+            br
+            |professional
+          .more-description
+            img(src="assets/images/introduction/IntroductionThree/decoration.png", alt="Decoration")
+            span Best treatment for curing stubborn whiteheads. Your skin loves it
+          p Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis pendisse ultrices gravida. Risus commodo viverra lacus vel facilisis.
+          +button({content: 'Read more', classname: '-dark', href: '#'})

@@ -1,0 +1,8 @@
+include ../../../base/variable.pug
+.category-two
+  .category-two-slider
+    each item in CATEGORY.TWO
+      .slider-item
+        .category-two__item
+          img(src=item.icon, alt="Category icon")
+          h3= item.name

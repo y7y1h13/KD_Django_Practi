@@ -1,0 +1,61 @@
+include ../../base/variable.pug
+include ../../mixins/social-icons.pug
+include ../../mixins/button.pug
+.footer-one
+  .container
+    .footer-one__header
+      .footer-one__header__logo
+        a(href="/homepages/homepage1")
+          img(src="assets/images/logo.png", alt="Logo")
+      .footer-one__header__newsletter
+        span Subscribe Newletter:
+        .footer-one-newsletter
+          .subscribe-form
+            .mc-form
+              input(type="text" placeholder="Enter your email")
+              +button({type: 'button', content: '<i class="fas fa-paper-plane"></i>'})
+      .footer-one__header__social
+        +socialIcons({classname: '-border'})
+    .footer-one__body
+      .row
+        .col-12.col-md-6.col-lg-4
+          .footer__section.-info
+            h5.footer-title Contact info
+            p Address:
+              span 2168 S Archer Ave, Chicago, IL 60616, US
+            p Phone:
+              span +1 312-808-1999
+            p Email:
+              span Beatycosmetics@gmail.com
+            p Opentime:
+              span 8.00am - 11.00.pm
+        .col-12.col-md-6.col-lg-4
+          .footer__section.-links
+            .row
+              .col-12.col-sm-6
+                h5.footer-title Account
+                ul
+                  each item in FOOTER_LINKS.accountLinks
+                    li
+                      a(href=item.to)= item.name
+              .col-12.col-sm-6
+                h5.footer-title Infomation
+                ul
+                  each item in FOOTER_LINKS.informationLinks
+                    li
+                      a(href=item.to)= item.name
+        .col-12.col-lg-4
+          .footer__section.-payment
+            h5.footer-title Payment methods
+            p  Lorem ipsum dolor sit amet, consectetur adipiscing elit gravida facilisis.
+            .payment-methods
+              img(src="assets/images/footer/payment.png", alt="Payment methods")
+  .footer-one__footer
+    .container
+      .footer-one__footer__wrapper
+        p © Copyright 2020 Beauty
+        ul
+          each item in FOOTER_LINKS.creditLinks
+            li
+              a(href=item.to)= item.name
+

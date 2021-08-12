@@ -1,0 +1,4 @@
+mixin rate(props = {})
+  - var {value} = props
+  - function renderStar() {let content = ''; for (let i = 0; i < 5; i++){ i >= value ? content += '<i class="far fa-star"></i>' : content += '<i class="fas fa-star"></i>'}; return content}
+  .rate!= renderStar()

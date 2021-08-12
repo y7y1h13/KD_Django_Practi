@@ -1,0 +1,74 @@
+mixin post(props = {})
+  -var {data = [], style = 1} = props;
+  if style === 2
+    .post-card-two
+      .post-card-two__image
+        img(src=data.thumbImage, alt=data.title)
+        .post-card-two__info
+          .post-card-two__info__date
+            h5 05
+            p Feb
+          .post-card-two__info__detail
+            p by 
+              span= data.author
+            a(href='#')= data.category
+      .post-card-two__content
+        a(href="/post-detail.html")= data.title
+        p= data.description
+  else if style === 3
+    .post-card-three
+      .post-card-three__image
+        img(src=data.thumbImage, alt=data.title)
+      .post-card-three__content
+        a(href="/post-detail.html")= data.title
+        p= data.publicDate
+  else if style === 4
+    .post-card-four
+      .post-card-four__image
+        img(src='' alt='Post image')
+      .post-card-four__content
+        a(href='post-detail.html')= data.title
+  else if style === 5
+    .post-card-five
+      a.post-card-five__image(href='/post-detail.html')
+        img(src=data.thumbImage alt=data.title)
+        .post-card-five__date
+          h5 05
+          p Feb
+      .post-card-five__content
+        .post-card-five__content__info
+          p by 
+            span= data.author
+          a(href='#')= data.category
+        a.post-card-five__content__title(href='/post-detail.html')= data.title
+        .post-card-five__content__description= data.description
+  else if style === 6
+    .post-card-featured
+      .post-card-featured__image
+        img(src=data.thumbImage, alt=data.title)
+      .post-card-featured__content
+        .post-card-featured__content__date
+          h5 05
+          p Feb
+        .post-card-featured__content__detail
+          .post-card-featured__info
+            p by 
+              span= data.author
+            a(href='#')= data.category
+          a.post-card-featured-title(href="/post-detail.html")= data.title
+          p.post-card-featured-description= data.description
+  else
+    .post-card-one
+      .post-card-one__date
+        h5 05
+        p Feb
+      .post-card-one__content
+        .post-card-one__content__info
+          p by 
+            span= data.author
+          a(href="#")= data.category
+        a.post-card-one__content__title(href="/blog/post-detail")= data.title
+
+
+
+

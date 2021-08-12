@@ -1,0 +1,30 @@
+.quantity-controller {
+  height: emCal(16, 50);
+  display: flex;
+  align-items: center;
+  &.-border {
+    padding: 0 emCal(16, 20);
+    border: 1px solid setShadeColor(light);
+  }
+  &.-round {
+    border-radius: 999px;
+  }
+  &__btn {
+    @include link($color: setShadeColor(medium), $fsz: emCal(16, 20));
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  &__number {
+    padding: 0 emCal(16, 45);
+    @include typo($fsz: emCal(16, 15), $fw: 700);
+    width: emCal(15, 100);
+    text-align: center;
+    @include mq(md) {
+      padding: 0 emCal(16, 15);
+      width: emCal(15, 60);
+    }
+  }
+}

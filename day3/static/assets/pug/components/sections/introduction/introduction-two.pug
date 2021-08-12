@@ -1,0 +1,13 @@
+include ../../../base/variable.pug
+.introduction-two
+  .video-frame(style='height: 500px; width: 888.889px;')
+    .video-frame__poster
+      img(src='assets/images/introduction/IntroductionTwo/4.png' alt='Video poster')
+    a.btn.-white.-round(href='#' style='height: 50px; width: 50px; line-height: 50px; padding: 0px;')
+      i.fas.fa-play
+  .introduction-two-content
+    .container
+      each item, index in INTRODUCTION.TWO
+        .introduction-two-content__item(data-cover=item.videoPoster data-src=item.videoSrc class=`${index === 0 ? 'active' : ''}`)
+          span= '0' + (index + 1)
+          a(href="#")= item.name

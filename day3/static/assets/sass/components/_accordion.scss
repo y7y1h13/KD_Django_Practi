@@ -1,0 +1,34 @@
+.accordion {
+  &-group {
+    border-bottom: 1px solid setShadeColor(light);
+    padding: emCal(16, 20) 0;
+    &:last-child {
+      border-bottom: 0;
+    }
+    &.active {
+      .accordion-header {
+        &:after {
+          content: "\f106";
+        }
+      }
+    }
+  }
+  &-header {
+    cursor: pointer;
+    &:after {
+      content: "\f107";
+      font-family: "Font Awesome 5 Pro";
+      display: inline-block;
+      font-size: 14px;
+      float: right;
+      font-weight: 500;
+    }
+    & > a {
+      @include link($fsz: emCal(16, 20), $fw: 600);
+    }
+  }
+  &-content {
+    margin-left: 0;
+    margin-top: emCal(16, 15);
+  }
+}

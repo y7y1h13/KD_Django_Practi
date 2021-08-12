@@ -1,0 +1,198 @@
+.product-slider {
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    @include link($color: setShadeColor(medium), $fsz: emCal(16, 30));
+    &.slick-next {
+      right: emCal(16, -15);
+    }
+    &.slick-prev {
+      left: emCal(16, -15);
+    }
+    @include mq(md) {
+      &.slick-next {
+        right: 0;
+      }
+      &.slick-prev {
+        left: 0;
+      }
+    }
+  }
+}
+
+.product-slide {
+  margin-bottom: remCal(100);
+  .product-slide__wrapper {
+    margin: 0 emCal(16, -15);
+    margin-bottom: emCal(16, 50);
+  }
+  &__item {
+    padding: 0 emCal(16, 15);
+    outline: 0;
+  }
+}
+
+.product-tab {
+  &.-style-1 {
+    margin-bottom: remCal(100);
+    .product-tab__header {
+      margin-bottom: emCal(16, 30);
+      ul {
+        text-align: center;
+        li {
+          display: inline-block;
+          margin: 0 emCal(16, 10);
+          @include spaceTrim;
+          a {
+            @include link(
+              $color: setShadeColor(medium),
+              $hvr-color: setShadeColor(dark),
+              $fsz: emCal(16, 15),
+              $fw: 500,
+              $bottom-dash: true,
+              $cpt: true
+            );
+          }
+          &.active {
+            a {
+              color: setShadeColor(dark);
+              &:after {
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .product-tab__content {
+      &__empty {
+        height: remCal(150);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h3 {
+          @include typo($fsz: emCal(16, 22));
+        }
+      }
+      &__wrapper {
+        margin-bottom: emCal(16, 30);
+        .product {
+          margin-bottom: emCal(16, 30);
+        }
+      }
+    }
+  }
+  &.-style-2 {
+    margin-bottom: remCal(100);
+    .product-tab__header {
+      @extend .product-tab-slide__header;
+    }
+    .product-tab__content {
+      &__wrapper {
+        .product {
+          margin-bottom: emCal(16, 30);
+          &.-height-limit {
+            .product-thumb {
+              height: emCal(16, 270);
+            }
+            &.-inline-content {
+              .product-thumb {
+                height: emCal(16, 750);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.product-tab-slide {
+  background-color: #f7e7e8;
+  margin-bottom: remCal(100);
+  padding: emCal(16, 100) 0;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: emCal(16, 50);
+    @include mq(md) {
+      justify-content: center;
+      h5 {
+        margin-bottom: emCal(16, 15);
+      }
+    }
+    h5 {
+      @include typo($fsz: emCal(16, 45), $fw: 500);
+    }
+    &__controller {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      @include mq(sm) {
+        justify-content: center;
+      }
+      ul {
+        margin-right: emCal(16, 30);
+        li {
+          display: inline-block;
+          margin: 0 emCal(16, 10);
+          @include spaceTrim;
+          a {
+            @include link(
+              $color: setShadeColor(medium),
+              $hvr-color: setShadeColor(dark),
+              $fsz: emCal(16, 15),
+              $fw: 500,
+              $bottom-dash: true,
+              $cpt: true
+            );
+          }
+          &.active {
+            a {
+              color: setShadeColor(dark);
+              &:after {
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+      .btn {
+        padding: emCal(16, 15) emCal(16, 20);
+      }
+    }
+  }
+  &__content {
+    .slick-arrow {
+      @extend .btn;
+      @include link($color: #fff, $fsz: emCal(16, 30));
+      padding: emCal(30, 10) emCal(30, 20);
+      background-color: rgba(#000000, 0.3);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      &.slick-next {
+        right: emCal(16, 40);
+      }
+      &.slick-prev {
+        left: emCal(16, 40);
+      }
+      @include mq(md) {
+        &.slick-next {
+          right: emCal(16, 15);
+        }
+        &.slick-prev {
+          left: emCal(16, 15);
+        }
+      }
+    }
+    .slide-item {
+      padding: 0 emCal(16, 15);
+    }
+  }
+}

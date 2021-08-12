@@ -1,0 +1,88 @@
+include ../../base/variable.pug
+include ../../mixins/button.pug
+include ../../mixins/social-icons.pug
+#mobile-menu-drawer.drawer.drawer-right.slide(tabindex='-1' role='dialog' aria-labelledby='drawer-demo-title' aria-hidden='true')
+  .drawer-content.drawer-content-scrollable(role='document')
+    .drawer-body
+      .cart-sidebar
+        .cart-items__wrapper
+          .navigation-sidebar
+            .search-box
+              form
+                input(type="text" placeholder="What are you looking for?")
+                button
+                  img(src="assets/images/header/search-icon.png", alt="Search icon")
+            .navigator-mobile
+              ul
+                li.relative
+                  a.dropdown-menu-controller(href='#')
+                    | Home
+                    span.dropable-icon
+                      i.fas.fa-angle-down
+                  ul.dropdown-menu
+                    li
+                      a(href='homepages/homepage1.html') Beauty Salon
+                    li
+                      a(href='homepages/homepage2.html') Makeup Salon
+                    li
+                      a(href='homepages/homepage3.html') Natural Shop
+                    li
+                      a(href='homepages/homepage4.html') Spa Shop
+                    li
+                      a(href='homepages/homepage5.html') Mask Shop
+                    li
+                      a(href='homepages/homepage6.html') Skincare Shop
+                li
+                  a(href='services.html') Services
+                li
+                  a(href='about.html') About
+                li
+                  a.dropdown-menu-controller(href='#')
+                    | Shop
+                    span.dropable-icon
+                      i.fas.fa-angle-down
+                  ul.dropdown-menu
+                    ul.dropdown-menu__col
+                      li
+                        a(href='shop-fullwidth-4col.html') Shop Fullwidth 4 Columns
+                      li
+                        a(href='shop-fullwidth-5col.html') Shop Fullwidth 5 Columns
+                      li
+                        a(href='shop-fullwidth-left-sidebar.html') Shop Fullwidth Left Sidebar
+                      li
+                        a(href='shop-fullwidth-right-sidebar.html') Shop Fullwidth Right Sidebar
+                    ul.dropdown-menu__col
+                      li
+                        a(href='shop-grid-4col.html') Shop grid 4 Columns
+                      li
+                        a(href='shop-grid-3col.html') Shop Grid 3 Columns
+                      li
+                        a(href='shop-grid-sidebar.html') Shop Grid Sideber
+                      li
+                        a(href='shop-list-sidebar.html') Shop List Sidebar
+                    ul.dropdown-menu__col
+                      li
+                        a(href='#') Product Detail
+                      li
+                        a(href='cart.html') Shopping cart
+                      li
+                        a(href='checkout.html') Checkout
+                      li
+                        a(href='wishlist.html') Wish list
+                    ul.dropdown-menu__col.-banner
+                      a(href='shop-fullwidth-4col.html')
+                        img(src='assets/images/header/dropdown-menu-banner.png' alt='New product banner.html')
+                li
+                  a(href='blog.html') Blog
+                li
+                  a(href='contact.html') Contact
+            .navigation-sidebar__footer
+              select.customed-select.-borderless(name="currency")
+                option(value="usd") USD
+                option(value="vnd") VND
+                option(value="yen") YEN
+              select.customed-select.-borderless(name="currency")
+                option(value="en") EN
+                option(value="vi") VI
+                option(value="jp") JP
+            +socialIcons

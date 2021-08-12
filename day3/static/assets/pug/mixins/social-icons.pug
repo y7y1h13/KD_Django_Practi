@@ -1,0 +1,16 @@
+mixin socialIcons(props = {})
+  - var {classname = '', colored} = props
+  div(class=`social-icons ${classname}`)
+    ul
+      li
+        a(href="https://www.facebook.com/" style=`'color: ${colored && "#2463ac"}'`)
+          i(class='fab fa-facebook-f')
+      li
+        a(href="https://twitter.com" style=`'color: ${colored && "#00c4fc"}'`)
+          i(class='fab fa-twitter')
+      li
+        a(href="https://instagram.com/" style=`'color: ${colored && "#dd34c1"}'`)
+          i(class='fab fa-instagram')  
+      li
+        a(href="https://www.youtube.com/" style=`'color: ${colored && "#ff081c"}'`)
+          i(class='fab fa-youtube')

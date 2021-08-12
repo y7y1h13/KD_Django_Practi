@@ -1,0 +1,10 @@
+include ../../../mixins/section-title.pug
+include ../../../mixins/post.pug
+include ../../../base/variable.pug
+.blog-three
+  .container
+    +sectionTitle({title: 'Tips & Tricks', classname: '-center', style: 'margin-bottom: 3.125rem'})
+    .row
+      each item in BLOG.slice(0, 4)
+        .col-12.col-md-6
+          +post({data: item, style: 5})

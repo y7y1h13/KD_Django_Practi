@@ -1,0 +1,12 @@
+include ../../mixins/rate.pug
+.review
+  .review__header
+    .review__header__avatar
+      img(src='https://i1.wp.com/metro.co.uk/wp-content/uploads/2020/03/GettyImages-1211127989.jpg?quality=90&strip=all&zoom=1&resize=644%2C416&ssl=1' alt='Reviewer avatar')
+    .review__header__info
+      h5 Lionel Messi
+      p Mar 17, 2020
+    .review__header__rate
+      +rate({value: 4})
+  p.review__content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+  a.review__report(href='#') Report as Inappropriate

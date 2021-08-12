@@ -1,0 +1,113 @@
+extends base/layout.pug
+block title
+  title Checkout
+block header
+  include components/header/menu/menu-five.pug
+block content
+  +breadcrumb({title: 'Checkout', children: '<li>Home</li><li>Shop</li><li class="active">Checkout</li>'})
+  .shop
+    .container
+      .checkout
+        .container
+          .row
+            .col-12.col-lg-8
+              form(action="")
+                .checkout__form
+                  .checkout__form__contact
+                    .checkout__form__contact__title
+                      h5.checkout-title Contact information
+                      p  Already have an account?
+                        a(href="#") Login
+                    .input-validator
+                      input(type="text" name="contact" placeholder="Email or mobile phone number")
+                    label.checkbox-label(for="subcribe-news")
+                      input(type="checkbox" id="subcribe-news" name="subcribeNews")
+                      |Keep me up to dateon news and exclusive offers
+                  .checkout__form__shipping
+                    h5.checkout-title Shipping address
+                    .row
+                      .col-12.col-md-6
+                        .input-validator
+                          label First name 
+                            span *
+                            input(type="text" name="firstName")
+                      .col-12.col-md-6
+                        .input-validator
+                          label Last name
+                            span *
+                            input(type="text" name="lastName")
+                      .col-12
+                        .input-validator
+                            label Country
+                              span *
+                              input(type='text' name='country')
+                      .col-12
+                        .input-validator
+                          label Address 
+                            span *
+                            input(type='text' name='streetAddress' placeholder='Steet address')
+                            input(type='text' name='apartment' placeholder='Apartment, suite, unite ect ( optinal )')
+                      .col-12
+                        .input-validator
+                          label Town/City 
+                            span *
+                            input(type='text' name='town')
+                      .col-12
+                        .input-validator
+                          label Country/State 
+                            span *
+                            input(type='text' name='state')
+                      .col-12
+                        .input-validator
+                          label Postcode/ZIP 
+                            span *
+                            input(type='text' name='zip')
+                      .col-12
+                        .input-validator
+                          label Order note
+                            input(type='text' name='note' placeholder='Note about your order, e.g, special noe for delivery')
+                      label.checkbox-label(for='save')
+                        input#save(type='checkbox' name='saveInfo')
+                        | Save this infomation for next time
+            .col-12.col-lg-4
+              .row
+                .col-12.col-md-6.col-lg-12.ml-auto
+                  .checkout__total
+                    h5.checkout-title Your order
+                    form.checkout__total__coupon
+                      h5 Coupon code
+                      .input-validator
+                        input(type="text" placeholder="Your code here" name="coupon")
+                      +button({content: 'apply', classname: '-dark'})
+                    .checkout__total__price
+                      h5 Product
+                      table
+                        colgroup
+                          col(style='width: 70%')
+                          col(style='width: 30%')
+                        tbody
+                          each item, index in PRODUCTS.slice(0, 3)
+                            tr
+                              td
+                                span 01 x 
+                                = item.name
+                              td= `$${item.price * 1}.00`
+                      .checkout__total__price__total-count
+                        table
+                          tbody
+                            tr
+                              td Subtotal
+                              td $108.00
+                            tr
+                              td Total
+                              td $108.00
+                      .checkout__total__price__payment
+                        label.checkbox-label(for='payment')
+                          input#payment(type='checkbox' name='payment')
+                          |Cheque payment
+                        label.checkbox-label(htmlfor='paypal')
+                          input#paypal(type='checkbox' name='paypal')
+                          |PayPal
+                    +button({content: 'Place order', classname: '-red', type: 'button'})
+  include components/sections/instagram/instagram-two.pug
+  include components/footer/footer-one.pug

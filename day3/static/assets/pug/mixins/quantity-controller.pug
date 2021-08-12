@@ -1,0 +1,6 @@
+mixin quantityController(props = {})
+  - var {value = 1, classname= ''} = props;
+  div(class=`quantity-controller ${classname}`)
+    .quantity-controller__btn.-descrease -
+    .quantity-controller__number= value
+    .quantity-controller__btn.-increase +

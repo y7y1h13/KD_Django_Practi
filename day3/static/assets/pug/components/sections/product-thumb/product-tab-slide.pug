@@ -1,0 +1,23 @@
+include ../../../mixins/button.pug
+include ../../../mixins/product.pug
+include ../../../base/variable.pug
+.product-tab-slide
+  .container
+    .product-tab-slide__header
+      h5 New arrivals
+      .product-tab-slide__header__controller
+        ul
+          each item, index in ["All", "Eyes", "Face", "Lips"]
+            if index === 0
+              li.active
+                a(href="#")= item
+            else
+              li
+                a(href="#")= item
+        +button({classname: '-white', content: 'View all', href: 'shop-fullwidth-4col.html'})
+  .product-tab-slide__content
+    each item in PRODUCTS.slice(0, 8)
+      .product-slide__item
+        +product({data: item})
+
+        

@@ -1,0 +1,19 @@
+extends base/layout.pug
+block title
+  title Homepage 4
+block header
+  include components/header/menu/menu-six.pug
+block content
+  +slider({classname: '-style-7 slider-arrow-middle', data: SLIDER.SIX})
+  include components/sections/categories/category-two.pug
+  include components/sections/product-thumb/product-tab-three.pug
+  .testimonial-introduction-group.mb-100(style="position: relative")
+    include components/sections/testimonial/testimonial-three.pug
+    include components/sections/introduction/introduction-ten.pug
+  .mb-100
+    include components/other/benefits.pug
+  include components/sections/dale-of-week/dow-three.pug
+  include components/sections/product-thumb/product-tab-four.pug
+  include components/sections/blog/blog-three.pug
+  include components/sections/instagram/instagram-three.pug
+  include components/footer/footer-one.pug

@@ -1,0 +1,24 @@
+mixin menuIcon(props = {})
+  - var {hide = [], white = false} = props;
+  div(class = `menu-functions ${white ? '-white' : ''}`)
+    if !hide.includes('search')
+      a.menu-icon.-search(href='#')
+        img(src=`${white ? 'assets/images/header/search-icon-white.png' : 'assets/images/header/search-icon.png'}`, alt="Search icon")
+      .search-box
+        form
+          input(type='text' placeholder='What are you looking for?' name='search')
+          button
+            img(src='assets/images/header/search-icon.png' alt='Search icon')
+    if !hide.includes('cart')
+      a.menu-icon.-wishlist(href='/wishlist.html')
+        img(src=`${white ? 'assets/images/header/wishlist-icon-white.png' : 'assets/images/header/wishlist-icon.png'}`, alt="Wishlist icon")
+      .menu-cart
+        a.menu-icon.-cart(href="#")
+          img(src=`${white ? 'assets/images/header/cart-icon-white.png' : 'assets/images/header/cart-icon.png'}`, alt="Wishlist icon")
+          span.cart__quantity 0
+        h5 Cart:
+          span $100
+      a.menu-icon.-navbar(href="#")
+        .bar
+        .bar
+        .bar

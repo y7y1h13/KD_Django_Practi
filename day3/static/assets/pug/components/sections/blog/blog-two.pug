@@ -1,0 +1,11 @@
+include ../../../mixins/section-title.pug
+include ../../../mixins/post.pug
+include ../../../base/variable.pug
+.blog-two
+  .container
+    +sectionTitle({title: 'Tips & tricks', classname: '-center', hideDecoration: true})
+    .blog-two-content
+      .blog-two-content__slider
+        each item in BLOG
+          .slider-item
+            +post({data: item, style: 2})

@@ -166,3 +166,6 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
 CART_ID = 'cart_in_session'
+
+
+STATICFILES_DIRS = (os.path.join('static'),)

@@ -1,0 +1,10 @@
+mixin sectionTitle(props = {})
+  - var {classname = '', style = 'margin-bottom: 1.875em', title, description, subTitle, hideDecoration} = props
+  div(class=`section-title ${classname}` style=style)
+    if subTitle
+      h5= subTitle
+    h2!= title
+    if description
+      p= description
+    if !hideDecoration
+      img(src="assets/images/introduction/IntroductionOne/content-deco.png", alt="Decoration")

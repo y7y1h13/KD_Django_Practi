@@ -1,0 +1,13 @@
+include ../../../mixins/section-title.pug
+.brand-one
+  .container
+    .brand-one__wrapper
+      .row.align-items-center
+        .col-12.col-md-4
+          +sectionTitle({title: 'Our Brands', description: 'Discover products with brands'})
+        .col-12.col-md-8
+          .brand-one__logos
+            - var n = 1;
+              while n < 7
+                .brand-one__logos__item
+                  img(src=`assets/images/brands/brandsone/${n++}.png` alt='logo')

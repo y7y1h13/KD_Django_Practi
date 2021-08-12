@@ -1,0 +1,23 @@
+.paginator {
+  list-style: none;
+  li {
+    display: inline-block;
+    margin: 0 emCal(16, 5);
+    @include spaceTrim;
+    &.active {
+      button {
+        background-color: setShadeColor(dark);
+        color: #fff;
+        height: emCal(14, 50);
+        width: emCal(14, 50);
+        padding: 0;
+      }
+    }
+    button {
+      @extend .btn, .-white, .-round;
+      height: emCal(14, 50);
+      width: emCal(14, 50);
+      padding: 0;
+    }
+  }
+}

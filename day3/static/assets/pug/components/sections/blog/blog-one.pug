@@ -1,0 +1,9 @@
+include ../../../base/variable.pug
+include ../../../mixins/post.pug
+include ../../../mixins/section-title.pug
+.blog-one
+  .container
+    +sectionTitle({title: 'Beautilicious blog', classname: '-center'})
+    .blog-one__content
+      each item in BLOG.slice(0,4)
+        +post({style: 1, data: item})

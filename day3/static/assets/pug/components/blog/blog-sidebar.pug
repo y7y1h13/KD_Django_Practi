@@ -1,0 +1,33 @@
+include ../../base/variable.pug
+include ../../mixins/social-icons.pug
+include ../../mixins/post.pug
+.blog-sidebar
+  .blog-sidebar__section.-search
+    form
+      input(type='text' placeholder='Enter keyword' name='search')
+      button
+        i.fas.fa-search
+  .blog-sidebar__section
+    h5.blog-sidebar__title Follow me
+    +socialIcons({classname: '-border -round -border--light-bg'})
+  .blog-sidebar__section.-categories
+    h5.blog-sidebar__title Categories
+    ul
+      each item, index in ['Beauty tips',"Make up", "Skin care", "Videos"]
+        li
+          a(href="#")= item
+            span= 1 + index
+  .blog-sidebar__section.-polular-post
+    h5.blog-sidebar__title Popular post
+    each item in BLOG.slice(0, 4)
+      +post({style: 3, data: item})
+  .blog-sidebar__section.-newsletter
+    h5.blog-sidebar__title News letter
+    p Subscribe to our newsletter a nd get our newest updates right on your inbox.
+    .subscribe-form.blog-sidebar-newsletter
+      form.mc-form
+        input#mc-form-email.email(type='email' placeholder='Enter your email')
+        label(for='agree')
+          input#agree(type='checkbox' name='agree')
+          | I agree to the terms & conditions
+        button.button Subcribe

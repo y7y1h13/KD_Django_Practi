@@ -1,0 +1,40 @@
+.section-title {
+  @include mq(lg) {
+    font-size: 14px;
+  }
+  @include mq(md) {
+    font-size: 12px;
+  }
+  &.-medium {
+    &.-style1 {
+      h2 {
+        font-size: emCal(16, 24);
+      }
+    }
+  }
+  &.-center {
+    text-align: center;
+  }
+  h5 {
+    @include typo($fsz: emCal(16, 15), $fw: 600, $up: true);
+    letter-spacing: emCal(15, 6);
+    margin-bottom: emCal(15, 30);
+  }
+  h2 {
+    @include typo(
+      $fsz: emCal(16, 40),
+      $lh: emCal(40, 55),
+      $fw: 500,
+      $cpt: true
+    );
+    margin-bottom: emCal(40, 10);
+  }
+  p {
+    @include typo(
+      $fsz: emCal(16, 15),
+      $lh: emCal(15, 24),
+      $color: setShadeColor(medium)
+    );
+    margin-bottom: emCal(15, 25);
+  }
+}

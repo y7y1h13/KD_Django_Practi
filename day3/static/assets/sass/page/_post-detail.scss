@@ -1,0 +1,178 @@
+.post {
+  margin-bottom: remCal(100);
+  &__cover {
+    max-height: emCal(16, 600);
+    overflow: hidden;
+    &:hover {
+      img {
+        transform: scale(1.1) rotate(1deg);
+      }
+    }
+    img {
+      @include imgCenter;
+      transition: 5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+  }
+  &__body {
+    .blog-sidebar {
+      padding-top: emCal(16, 100);
+      @include mq(md) {
+        margin-bottom: emCal(14, 70);
+      }
+    }
+    .post-content {
+      background-color: #fff;
+      margin-top: emCal(16, -50);
+      padding: emCal(16, 50) emCal(16, 70) 0;
+      @include mq(md) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      &__header {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: emCal(16, 45);
+        &__date {
+          background-color: setColor(red);
+          display: inline-block;
+          text-align: center;
+          padding: emCal(16, 10);
+          margin-right: emCal(16, 40);
+          h5 {
+            @include typo($fw: 600, $color: #fff);
+            margin-bottom: emCal(16, 5);
+          }
+          p {
+            @include typo($fsz: emCal(16, 13), $color: #fff);
+          }
+        }
+        &__content {
+          .post_content__info {
+            margin-bottom: emCal(16, 15);
+            p {
+              @include typo($fsz: emCal(16, 13), $color: setShadeColor(medium));
+              display: inline-block;
+              span {
+                color: setShadeColor(dark);
+              }
+              &:after {
+                content: "/";
+                margin: 0 emCal(16, 10);
+              }
+            }
+            a {
+              @include link($fsz: emCal(16, 13), $color: setColor(red));
+            }
+          }
+          h2 {
+            @include typo($fsz: emCal(16, 30), $lh: emCal(30, 39), $fw: 600);
+          }
+        }
+      }
+      &__body {
+        margin-bottom: emCal(16, 65);
+        .post-image {
+          margin-bottom: emCal(16, 40);
+          @include imgCenter;
+        }
+        .post-paragraph {
+          @include typo($lh: emCal(16, 29), $color: #444);
+          margin-bottom: emCal(29, 40);
+          span {
+            font-weight: 600;
+            color: setShadeColor(dark);
+          }
+        }
+        .post-quote {
+          border: 1px solid rgba($color: setColor(red), $alpha: 0.5);
+          padding: emCal(16, 40) emCal(16, 50);
+          margin-bottom: emCal(16, 40);
+          h5 {
+            @include typo($fsz: emCal(16, 20), $lh: emCal(20, 36), $fw: 600);
+            margin-bottom: emCal(16, 17);
+          }
+          &__author {
+            display: flex;
+            align-items: center;
+            i {
+              font-size: emCal(16, 24);
+              margin-right: emCal(16, 15);
+              color: setColor(red);
+            }
+            p {
+              @include typo($color: setShadeColor(medium));
+            }
+          }
+        }
+      }
+      &__footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: emCal(16, 70);
+        span {
+          @include typo($fsz: emCal(16, 15), $fw: 600);
+          margin-right: emCal(15, 30);
+        }
+        &__tags {
+          @include mq(md) {
+            margin-bottom: emCal(14, 30);
+          }
+          .btn {
+            padding: emCal(16, 6) emCal(16, 15);
+            font-size: emCal(16, 14);
+            font-weight: 400;
+            text-transform: none;
+            margin-right: emCal(14, 10);
+          }
+        }
+        &__share {
+          display: flex;
+          align-items: center;
+        }
+      }
+      &__actions {
+        &__change {
+          background-color: #f7f5f4;
+          padding: emCal(16, 15) emCal(16, 30);
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: emCal(16, 70);
+          .change-post-btn {
+            @include link($fsz: emCal(16, 13), $up: true, $fw: 600);
+            letter-spacing: emCal(13, 1.3);
+            &.-prev {
+              i {
+                margin-right: emCal(13, 10);
+              }
+            }
+            &.-next {
+              i {
+                margin-left: emCal(13, 10);
+              }
+            }
+          }
+        }
+        &__comment {
+          h5 {
+            @include typo($fsz: emCal(16, 24), $fw: 600);
+            margin-bottom: emCal(24, 40);
+          }
+          form {
+            text-align: center;
+            .input-validator {
+              margin-bottom: emCal(16, 20);
+              input {
+                @include input($height: emCal(16, 45));
+              }
+              textarea {
+                @include input();
+                resize: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.category-one {
+  margin-bottom: remCal(100);
+  .category-card {
+    position: relative;
+    height: emCal(16, 360);
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    &:hover {
+      .category-card__background {
+        transform: scale(1.05);
+      }
+    }
+    &__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      transition: 0.5s ease-out;
+      transform-origin: bottom right;
+      img {
+        @include imgCenter;
+      }
+    }
+    &__content {
+      padding: emCal(16, 50);
+      h3 {
+        @include typo($fsz: emCal(16, 30), $fw: 600);
+        margin-bottom: emCal(30, 20);
+      }
+      h5 {
+        @include typo($fsz: 1em, $fw: 500);
+      }
+    }
+  }
+}
+
+.category-two {
+  margin-bottom: remCal(100);
+  .slick-arrow {
+    @extend .btn;
+    @include link($color: setShadeColor(light), $fsz: emCal(16, 30));
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    padding: 0;
+    &:hover {
+      color: setShadeColor(medium);
+    }
+    &.slick-next {
+      right: emCal(30, 0);
+    }
+    &.slick-prev {
+      left: emCal(30, 0);
+    }
+    @include mq(md) {
+      &.slick-next {
+        right: emCal(30, 15);
+      }
+      &.slick-prev {
+        left: emCal(30, 15);
+      }
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: setColor(red);
+    padding: emCal(16, 50) 0;
+    position: relative;
+    @include link($fsz: emCal(16, 15), $fw: 600, $color: #fff);
+    &::after {
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      transition: $transition;
+    }
+    &:hover {
+      // background-color: #fff;
+      &::after {
+        top: 0;
+      }
+      img {
+        filter: none;
+      }
+    }
+    img {
+      @include imgCenter(
+        $height: emCal(16, 50),
+        $width: emCal(16, 50),
+        $type: contain
+      );
+      margin-right: emCal(16, 25);
+      filter: brightness(5);
+      transition: $transition;
+    }
+    h3,
+    img {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

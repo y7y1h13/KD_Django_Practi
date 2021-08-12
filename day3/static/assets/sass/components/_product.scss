@@ -1,0 +1,310 @@
+.product {
+  position: relative;
+  &-category {
+    @include typo(
+      $fsz: emCal(16, 13),
+      $color: setShadeColor(medium),
+      $cpt: true
+    );
+  }
+  &-price--main {
+    @include typo($fsz: emCal(16, 13), $fw: 600);
+  }
+  &-price--discount {
+    @include typo($fsz: emCal(16, 13), $color: setShadeColor(medium));
+    text-decoration: line-through;
+  }
+  &-colors {
+    margin-left: auto;
+
+    &__item {
+      height: emCal(16, 10);
+      width: emCal(16, 10);
+      border-radius: 999px;
+      display: inline-block;
+      margin: 0 emCal(16, 3);
+      cursor: pointer;
+      @include spaceTrim;
+      &:hover {
+        border: 1px solid setShadeColor(light);
+      }
+      &.active {
+        border: 1px solid setShadeColor(light);
+      }
+    }
+  }
+  &-type {
+    position: absolute;
+    top: emCal(16, 15);
+    left: emCal(16, 15);
+    z-index: 10;
+    .-new,
+    .-sale {
+      @include typo($fsz: emCal(16, 13), $color: #fff);
+      background-color: setColor(blue);
+      padding: emCal(16, 5);
+      border-radius: emCal(16, 3);
+    }
+    .-sale {
+      background-color: setColor(darkRed);
+    }
+  }
+  &-btn {
+    display: inline-block;
+  }
+  &-description {
+    @include typo($fsz: emCal(16, 15), $lh: emCal(15, 27));
+  }
+  &:hover {
+    .product-thumb {
+      &__image {
+        img {
+          &:nth-child(2) {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  &-thumb {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: emCal(16, 25);
+    &:hover {
+      .product-thumb__actions {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    &__image {
+      display: block;
+      height: 100%;
+      width: 100%;
+      img {
+        &:nth-child(2) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: $transition;
+          z-index: 9;
+        }
+        &:nth-child(3) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: $transition;
+          z-index: 10;
+        }
+        @include imgCenter;
+      }
+    }
+    &__actions {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: emCal(16, 20) 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 10;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: $transition;
+      .product-btn {
+        margin: 0 emCal(16, 5);
+        display: inline-block;
+        .product__actions__item {
+          height: emCal(14, 50);
+          width: emCal(14, 50);
+          padding: 0;
+          line-height: emCal(14, 50);
+          @include spaceTrim;
+          &.active {
+            background-color: setColor(red);
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  &-name {
+    @include link($fsz: 1em, $lh: emCal(16, 26), $fw: 500);
+    display: block;
+    margin-bottom: emCal(16, 10);
+    @include overflowText(1);
+  }
+  &-content {
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: emCal(16, 10);
+      h5 {
+        @include typo(
+          $fsz: emCal(16, 13),
+          $color: setShadeColor(medium),
+          $cpt: true
+        );
+      }
+    }
+    &__footer {
+      display: flex;
+      align-items: center;
+      .product-price--main {
+        margin-right: emCal(13, 10);
+      }
+    }
+  }
+
+  &.-inline-content {
+    position: relative;
+    .product-thumb {
+      &__actions {
+        bottom: 50%;
+        transform: translateY(50%);
+      }
+    }
+    .product-content {
+      position: absolute;
+      bottom: emCal(16, 30);
+      left: emCal(16, 30);
+      right: emCal(16, 30);
+      z-index: 10;
+    }
+  }
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid setShadeColor(light);
+  &:hover {
+    .product-list__thumb {
+      &__image {
+        img {
+          &:nth-child(2) {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  &-thumb {
+    flex: 1 1 35%;
+    max-width: 35%;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    @include mq(sm) {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+    &__image {
+      display: block;
+      height: 100%;
+      width: 100%;
+      max-height: emCal(16, 350);
+      img {
+        &:nth-child(2) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: $transition;
+          z-index: 9;
+        }
+        &:nth-child(3) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: $transition;
+          z-index: 10;
+        }
+        @include imgCenter;
+      }
+    }
+  }
+  &-content {
+    flex: 1 1 65%;
+    max-width: 65%;
+    padding: emCal(16, 50);
+    @include mq(xxl) {
+      padding: emCal(14, 30);
+    }
+    @include mq(lg) {
+      padding: emCal(14, 20);
+    }
+    @include mq(sm) {
+      flex: 1 1 100%;
+      max-width: 100%;
+      padding: emCal(14, 20);
+    }
+    &__top {
+      padding-bottom: emCal(16, 25);
+      margin-bottom: emCal(16, 25);
+      border-bottom: 1px solid setShadeColor(light);
+      .product-category__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: emCal(16, 10);
+      }
+      .product__price {
+        display: flex;
+        align-items: center;
+        &__wrapper {
+          display: flex;
+          .product-price--main {
+            margin-right: emCal(13, 10);
+          }
+        }
+      }
+    }
+    &__bottom {
+      .product-description {
+        margin-bottom: emCal(15, 30);
+      }
+      .product-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .product-btn {
+          &:not(:last-child) {
+            margin-right: emCal(16, 10);
+            margin: 0 emCal(16, 10) emCal(16, 10) 0;
+            @include mq(md) {
+              margin-right: 0 emCal(14, 5) emCal(14, 5) 0;
+            }
+          }
+          a {
+            height: emCal(13, 45);
+            width: emCal(13, 45);
+            line-height: emCal(13, 45);
+            padding: 0;
+            @include mq(xl) {
+              font-size: 13px;
+            }
+          }
+          .add-to-cart {
+            height: emCal(16, 45);
+            @include mq(md) {
+              height: emCal(14, 45);
+            }
+            .btn {
+              height: emCal(13, 43);
+              width: emCal(13, 43);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.product-quickview {
+  padding: emCal(16, 50);
+  .product-detail_slide-one {
+    @include mq(md) {
+      margin-bottom: emCal(16, 50);
+    }
+  }
+}

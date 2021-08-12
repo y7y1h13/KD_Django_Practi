@@ -1,0 +1,21 @@
+include ../../../mixins/section-title.pug
+include ../../../base/variable.pug
+.introduction-eight
+  .container
+    .row.no-gutters.align-items-center
+      .col-12.col-lg-4.order-lg-2
+        .introduction-eight__image
+          img(src="assets/images/introduction/IntroductionEight/1.png", alt="Introduction image")
+      .col-12.col-lg-8.order-lg-1
+        +sectionTitle({title: 'Why Choose “Your Product”?'})
+        .introduction-eight__content
+          .row
+            each item in INTRODUCTION.EIGHT
+              .col-12.col-md-6
+                .introduction-eight__content__item
+                  .introduction-eight__content__item__image
+                    img(src=item.image, alt=item.title)
+                  .introduction-eight__content__item__content
+                    h3= item.title
+                    p= item.description
+

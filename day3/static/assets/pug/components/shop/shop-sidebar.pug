@@ -1,0 +1,27 @@
+include ../../mixins/section-title.pug
+.shop-sidebar
+  .shop-sidebar__content
+    .shop-sidebar__section.-categories
+      +sectionTitle({title: 'Categories', classname: '-style1 -medium', style: `margin-bottom:${30/16 + 'em'}`})
+      ul
+        each item in ['All', 'Eyes', 'Face', 'Lips', 'Set']
+          li
+            a(href="#")= item
+    .shop-sidebar__section.-refine
+      +sectionTitle({title: 'Refine Search', classname: '-style1 -medium', style: `margin-bottom:${30/16 + 'em'}`})
+      .shop-sidebar__section__item
+        h5 Brand
+        ul
+          each item, index in ["Gucci","Dolce","H&M","Kenzo","Prada"]
+            li
+              label(for=`brand-${index}`)
+                input(type="checkbox", name=item, id=`brand-${index}`)
+                = item
+      .shop-sidebar__section__item
+        h5 Price
+        ul
+          each item, index in ["$0.00 - $25.00","$25.00 - $50.00","$50.00 - $75.00","$75.00 - $100.00"]
+            li
+              label(for=`price-${index}`)
+                input(type="checkbox", name=item, id=`price-${index}`)
+                = item

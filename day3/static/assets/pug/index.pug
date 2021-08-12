@@ -1,0 +1,14 @@
+extends base/layout.pug
+block title
+  title Homepage 1
+block header
+  include components/header/header-one.pug
+block content
+  +slider({classname: '-style-1 slider-arrow-middle', data: SLIDER.ONE})
+  include components/sections/introduction/introduction-one.pug
+  include components/sections/introduction/introduction-two.pug
+  include components/sections/product-thumb/product-slide.pug
+  include components/sections/testimonial/testimonial-one.pug
+  include components/sections/team/team-one.pug
+  include components/sections/call-to-action/cta-one.pug
+  include components/footer/footer-one.pug

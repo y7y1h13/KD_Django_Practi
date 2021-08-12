@@ -1,0 +1,34 @@
+extends base/layout.pug
+block title
+  title Contact
+block header
+  include components/header/menu/menu-five.pug
+block content
+  +breadcrumb({title: 'Contact', children: '<li>Home</li><li class="active">Contact us</li>'})
+  .contact
+    .container
+      .row
+        .col-12.col-md-6 
+          h3.contact-title Contact info
+          each item in CONTACT
+            .contact-info__item
+              .contact-info__item__icon
+                i(class=item.iconClass)
+              .contact-info__item__detail
+                h3= item.title
+                p= item.detail
+        .col-12.col-md-6
+          h3.contact-title Get in touch
+          .contact-form
+            form
+              .input-validator
+                input(type='text' name='name' placeholder='Name')
+              .input-validator
+                input(type='text' name='email' placeholder='Email')
+              .input-validator
+                textarea(name='message' id='' cols='30' rows='3' placeholder='Message')
+              +button({classname: '-dark', content: 'SEND MESSAGE'}) 
+        .col-12
+          iframe.contact-map(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26544.761428132653!2d105.83081260286463!3d21.01523825635793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSMOgIE7hu5lpLCBIb8OgbiBLaeG6v20sIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1594639675485!5m2!1svi!2s' width='100%' height='450' frameborder='0' allowfullscreen='')
+  include components/sections/instagram/instagram-two.pug
+  include components/footer/footer-one.pug

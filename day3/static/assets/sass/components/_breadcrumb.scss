@@ -1,0 +1,32 @@
+.breadcrumb {
+  text-align: center;
+  background: {
+    image: url("../images/common/Breadcrumb/bg.png");
+    size: cover;
+    repeat: no-repeat;
+  }
+  padding: emCal(16, 50) 0;
+  margin-bottom: remCal(100);
+  h2 {
+    @include typo($fsz: emCal(16, 50), $fw: 700);
+    margin-bottom: emCal(50, 20);
+  }
+  ul {
+    list-style: none;
+    li {
+      display: inline-block;
+      &.active {
+        color: setColor(red);
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+      &:after {
+        content: "/";
+        margin: 0 emCal(16, 10);
+      }
+    }
+  }
+}

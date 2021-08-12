@@ -1,0 +1,65 @@
+.cta {
+  padding: emCal(16, 90) 0;
+  background: {
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+  &__form {
+    &__detail {
+      .input-validator {
+        margin-bottom: emCal(16, 15);
+        label.error {
+          margin-top: emCal(16, 10);
+          display: block;
+          @include typo($fsz: emCal(16, 14), $color: setColor(red));
+          font-style: italic;
+          text-align: right;
+        }
+      }
+      textarea {
+        @include input(
+          $pd: emCal(13, 20),
+          $height: emCal(14, 100),
+          $lh: auto,
+          $fsz: emCal(16, 14)
+        );
+      }
+      input {
+        @include input(
+          $pd: 0 emCal(13, 20),
+          $height: emCal(13, 50),
+          $fsz: emCal(16, 14)
+        );
+      }
+      select {
+        @include typo($fsz: emCal(16, 13));
+        height: emCal(13, 50);
+        width: 100%;
+        padding: 0 emCal(13, 20);
+        background-position: calc(100% - 20px) center;
+      }
+    }
+  }
+  &.-style-1 {
+    background-attachment: fixed;
+    .cta__form {
+      background-color: #fff;
+      padding: emCal(16, 50);
+      text-align: center;
+    }
+  }
+  &.-style-2 {
+    background-attachment: fixed;
+    .cta__form {
+      h3 {
+        @include typo($fsz: emCal(16, 42), $lh: emCal(42, 55), $fw: 600);
+        text-align: center;
+        margin-bottom: emCal(42, 85);
+      }
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+}

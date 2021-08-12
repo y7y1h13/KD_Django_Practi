@@ -1,0 +1,19 @@
+.blog {
+  margin-bottom: remCal(100);
+  .post-card-featured {
+    margin-bottom: emCal(16, 60);
+  }
+  .post-card-two {
+    margin-bottom: emCal(16, 30);
+  }
+  &-sidebar {
+    margin-bottom: remCal(70);
+  }
+  .search-result {
+    @include typo();
+    margin-bottom: emCal(16, 50);
+    span {
+      font-weight: 600;
+    }
+  }
+}

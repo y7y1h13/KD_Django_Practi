@@ -1,0 +1,321 @@
+.product-detail__slide-one {
+  padding-right: emCal(16, 30);
+  @include mq(md) {
+    padding-right: 0;
+    margin-bottom: emCal(14, 50);
+  }
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    @include link($fsz: emCal(16, 36), $color: setShadeColor(medium));
+    &.slick-next {
+      right: emCal(36, 20);
+    }
+    &.slick-prev {
+      left: emCal(36, 20);
+    }
+  }
+  .slider-item {
+    outline: 0;
+    img {
+      @include imgCenter;
+    }
+  }
+  .slider-dots {
+    list-style: none;
+    text-align: center;
+    position: absolute;
+    bottom: emCal(16, 20);
+    left: 50%;
+    transform: translateX(-50%);
+    li {
+      display: inline-block;
+      margin: 0 emCal(16, 5);
+      @include spaceTrim;
+      &.slick-active {
+        .slider-dot {
+          background-color: setShadeColor(medium);
+        }
+      }
+      .slider-dot {
+        height: emCal(16, 8);
+        width: emCal(16, 8);
+        cursor: pointer;
+        background-color: #c7c7c7;
+        border-radius: 999px;
+      }
+    }
+  }
+  img {
+    max-height: emCal(16, 500);
+  }
+}
+
+.product-detail__slide-two {
+  @include mq(md) {
+    margin-bottom: emCal(14, 30);
+  }
+  .slider__item {
+    outline: 0;
+    img {
+      @include imgCenter;
+    }
+  }
+  &__big {
+    margin-bottom: emCal(16, 20);
+  }
+  &__small {
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      @extend .btn, .-white, .-round;
+      padding: 0;
+      height: emCal(16, 40);
+      width: emCal(16, 40);
+      line-height: emCal(16, 40);
+      &.slick-prev {
+        left: emCal(16, 15);
+      }
+      &.slick-next {
+        right: emCal(16, 15);
+      }
+    }
+    .slick-current {
+      .slider__item {
+        img {
+          border: 2px solid setColor(red);
+        }
+      }
+    }
+    .slider__item {
+      padding: 0 emCal(16, 5);
+      img {
+        @include imgCenter($height: emCal(16, 120));
+      }
+    }
+  }
+}
+
+#quick-view-modal {
+  max-width: 1170px;
+}
+
+.product-detail__content {
+  &__header {
+    h5 {
+      @include typo($fsz: emCal(16, 13), $color: setColor(medium), $cpt: true);
+      margin-bottom: emCal(16, 10);
+    }
+    h2 {
+      @include typo($fsz: emCal(16, 24), $lh: emCal(24, 32), $cpt: true);
+      margin-bottom: emCal(24, 15);
+    }
+
+    &__comment-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: emCal(16, 25);
+      .rate {
+        &:after {
+          content: "/";
+          margin: 0 emCal(13, 20);
+        }
+      }
+      p {
+        @include typo($fsz: emCal(16, 13));
+        &:after {
+          content: "/";
+          margin: 0 emCal(13, 20);
+        }
+      }
+      a {
+        @include link($fsz: emCal(16, 13));
+      }
+      @include mq(md) {
+        flex-direction: column;
+        align-items: flex-start;
+        .rate,
+        p {
+          margin-bottom: emCal(16, 15);
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+    h3 {
+      @include typo(
+        $fsz: emCal(16, 20),
+        $fw: 600,
+        $color: setColor(red),
+        $cpt: true
+      );
+      span {
+        text-decoration: line-through;
+        margin-left: emCal(16, 30);
+        @include typo(
+          $fsz: emCal(20, 15),
+          $fw: 500,
+          $color: setShadeColor(medium)
+        );
+      }
+    }
+  }
+  &__footer {
+    ul {
+      list-style: none;
+      margin-bottom: emCal(16, 30);
+      li {
+        @include typo(
+          $fsz: emCal(16, 15),
+          $lh: emCal(16, 30),
+          $color: setShadeColor(medium),
+          $cpt: true
+        );
+        span {
+          color: setShadeColor(dark);
+        }
+      }
+    }
+    .product-detail__colors {
+      margin-bottom: emCal(16, 40);
+      span {
+        @include typo($fsz: emCal(16, 15));
+        margin-right: emCal(15, 10);
+      }
+      &__item {
+        height: emCal(16, 12);
+        width: emCal(16, 12);
+        display: inline-block;
+        border-radius: 999px;
+        margin: 0 emCal(16, 4);
+        @include spaceTrim;
+        &:hover {
+          border: 1px solid #e1e1e1;
+        }
+        &.active {
+          border: 1px solid #e1e1e1;
+        }
+      }
+    }
+  }
+  &__tab {
+    .tab-content__header {
+      border-bottom: 0;
+      margin-bottom: emCal(16, 45);
+      li {
+        outline: 0;
+        @include typo(
+          $fsz: emCal(16, 15),
+          $color: setShadeColor(medium),
+          $fw: 500,
+          $lh: emCal(15, 27)
+        );
+        &:after {
+          content: "/";
+          margin: 0 emCal(16, 15);
+          color: setShadeColor(medium) !important;
+        }
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+        &.active {
+          color: setShadeColor(dark);
+        }
+      }
+    }
+    .tab-content__item {
+      &.-description {
+        p {
+          @include typo($fsz: emCal(16, 15), $lh: emCal(15, 27));
+        }
+      }
+      &.-ship {
+        h5 {
+          @include typo($fsz: emCal(16, 15), $fw: 600);
+          margin-bottom: emCal(15, 30);
+          span {
+            font-weight: 500;
+          }
+        }
+        p {
+          @include typo($fsz: emCal(16, 15), $lh: emCal(15, 27));
+        }
+        ul {
+          list-style: none;
+          margin-bottom: emCal(16, 30);
+          li {
+            @include typo($fsz: emCal(16, 15), $lh: emCal(15, 27));
+            &::before {
+              content: "\f00c";
+              font-family: "Font Awesome 5 Pro";
+              margin-right: emCal(16, 15);
+            }
+            span {
+              color: setColor(red);
+            }
+          }
+        }
+      }
+      &.-review {
+        .review {
+          margin-bottom: emCal(16, 50);
+        }
+        form {
+          .input-validator {
+            margin-bottom: emCal(16, 30);
+          }
+          h5 {
+            @include typo($fsz: emCal(16, 15), $fw: 600);
+            margin-bottom: emCal(16, 30);
+          }
+          input {
+            @include input($height: emCal(16, 45));
+          }
+          textarea {
+            @include input();
+
+            resize: none;
+          }
+        }
+      }
+    }
+  }
+  .divider {
+    height: 1px;
+    width: 100%;
+    background-color: setShadeColor(light);
+    margin: remCal(50) 0;
+  }
+  .product-detail__controller {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .btn {
+      height: emCal(13, 50);
+      width: emCal(13, 50);
+      padding: 0;
+      line-height: emCal(13, 50);
+      &.active {
+        background-color: setColor(red);
+        color: #fff;
+      }
+    }
+    @include mq(md) {
+      font-size: 13px;
+      .quantity-controller {
+        margin-bottom: emCal(13, 10);
+      }
+      .add-to-cart {
+        margin-bottom: emCal(13, 10);
+      }
+    }
+  }
+}

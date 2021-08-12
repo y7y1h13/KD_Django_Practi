@@ -1,0 +1,12 @@
+include ../../base/variable.pug
+.benefits
+  .container
+    .row
+      each item in BENEFITS
+        .col-12.col-sm-6.col-lg-3
+          .benefits__item
+            .benefits__item__icon
+              img(src=item.image alt=item.name)
+            .benefits__item__content
+              h5= item.name
+              p= item.content

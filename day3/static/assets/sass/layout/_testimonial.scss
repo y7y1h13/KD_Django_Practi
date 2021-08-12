@@ -1,0 +1,192 @@
+.testimonial {
+  background-color: #f7f5f4;
+  padding: remCal(100) 0;
+  margin-bottom: remCal(100);
+  .slick-slide {
+    outline: 0;
+  }
+  .slide-nav {
+    @include mq(md) {
+      margin-bottom: emCal(16, 50);
+    }
+    &__item {
+      padding: emCal(16, 5);
+      cursor: pointer;
+      outline: 0;
+      img {
+        @include imgCenter;
+        transition: $transition;
+      }
+      &:hover {
+        img {
+          transform: scale(1.08);
+        }
+      }
+      &.active {
+        img {
+          transform: scale(1.08);
+        }
+      }
+    }
+  }
+  .slide-for {
+    padding-left: emCal(16, 30);
+    @include mq(md) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &__item {
+      margin-bottom: emCal(16, 50);
+      outline: 0;
+      &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: emCal(16, 30);
+        .quote-icon {
+          color: #fff;
+          font-size: emCal(16, 15);
+          height: emCal(15, 50);
+          width: emCal(15, 50);
+          background-color: setColor(red);
+          border-radius: 999px;
+          text-align: center;
+          line-height: emCal(15, 50);
+          margin-right: emCal(15, 20);
+        }
+        .customer__info {
+          h3 {
+            @include typo($fsz: emCal(16, 20), $fw: 600);
+            margin-bottom: emCal(20, 8);
+          }
+          h5 {
+            @include typo($fsz: emCal(16, 13), $fw: 400);
+          }
+        }
+        .rate {
+          margin-left: auto;
+        }
+      }
+      &__content {
+        @include typo($fsz: emCal(16, 16), $lh: emCal(16, 28), $fw: 400);
+        color: #444;
+      }
+    }
+  }
+  .testimonial-one__slider-control {
+    a {
+      @include link($fsz: emCal(16, 13), $up: true, $fw: 600);
+      &:first-child {
+        margin-right: emCal(13, 40);
+        i {
+          margin-right: emCal(13, 10);
+        }
+      }
+      &:last-child {
+        i {
+          margin-left: emCal(13, 10);
+        }
+      }
+    }
+  }
+  .slider-dots {
+    list-style: none;
+    li {
+      display: inline-block;
+      margin: 0 emCal(16, 5);
+      @include spaceTrim();
+      &.slick-active {
+        .slider-dot {
+          background-color: rgba($color: #111, $alpha: 0.5);
+        }
+      }
+      .slider-dot {
+        height: emCal(16, 3);
+        width: emCal(16, 30);
+        background-color: rgba($color: #111, $alpha: 0.2);
+      }
+    }
+  }
+  &.-style-2 {
+    margin-bottom: 0;
+
+    .slide-for {
+      padding-left: 0;
+      padding-right: emCal(16, 30);
+      @include mq(md) {
+        margin-bottom: emCal(16, 50);
+      }
+    }
+    .slide-nav {
+      @include mq(md) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.testimonial-three {
+  padding: emCal(16, 70) 0 emCal(16, 230);
+  background: {
+    image: url("../images/testimonial/TestimonialThree/bg.png");
+    position: center;
+    size: cover;
+    repeat: no-repeat;
+  }
+  position: inherit;
+  z-index: 0;
+  .slick-arrow {
+    @extend .btn;
+    @include link($color: setShadeColor(medium), $fsz: emCal(16, 50));
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    padding: 0;
+    &.slick-next {
+      right: emCal(50, 0);
+    }
+    &.slick-prev {
+      left: emCal(50, 0);
+    }
+    @include mq(md) {
+      &.slick-next {
+        right: emCal(50, 15);
+      }
+      &.slick-prev {
+        left: emCal(50, 15);
+      }
+    }
+  }
+  &__item {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    p {
+      margin-bottom: emCal(16, 40);
+      i {
+        font-size: emCal(16, 24);
+        color: setColor(red);
+        margin-right: emCal(24, 5);
+      }
+      @include typo($fsz: 1em, $color: setShadeColor(dark), $fw: 500);
+    }
+    h3 {
+      @include typo(
+        $fsz: emCal(16, 24),
+        $lh: emCal(24, 41),
+        $color: setShadeColor(dark),
+        $fw: 600
+      );
+      margin-bottom: emCal(24, 30);
+    }
+    .author-info {
+      h5 {
+        @include typo($fsz: 1em, $color: setShadeColor(dark), $fw: 500);
+        margin-bottom: emCal(16, 8);
+      }
+      span {
+        @include typo($fsz: emCal(16, 14), $color: setShadeColor(medium));
+      }
+    }
+  }
+}

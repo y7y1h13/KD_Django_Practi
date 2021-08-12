@@ -1,0 +1,83 @@
+.blog-sidebar {
+  &__section {
+    padding-bottom: emCal(16, 40);
+    margin-bottom: emCal(16, 40);
+    border-bottom: 1px solid setShadeColor(light);
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+    &.-search {
+      form {
+        position: relative;
+        input {
+          @include input($height: emCal(16, 50));
+        }
+        button {
+          position: absolute;
+          top: 50%;
+          right: emCal(16, 20);
+          transform: translateY(-50%);
+          @include link;
+          background-color: transparent;
+          border: 0;
+        }
+      }
+    }
+    &.-categories {
+      ul {
+        list-style: none;
+        li {
+          margin-bottom: emCal(16, 20);
+          a {
+            @include link(
+              $color: setShadeColor(medium),
+              $hvr-color: setShadeColor(dark),
+              $fsz: emCal(16, 15),
+              $fw: 500
+            );
+            span {
+              float: right;
+            }
+          }
+        }
+      }
+    }
+    &.-polular-post {
+      .post-card-three {
+        margin-bottom: emCal(16, 30);
+      }
+    }
+    &.-newsletter {
+      .blog-sidebar-newsletter {
+        .mc-form {
+          input[type="email"] {
+            @include input($height: emCal(14, 45));
+            margin-bottom: emCal(14, 15);
+          }
+          label {
+            @include typo($fsz: emCal(16, 14), $lh: emCal(14, 28));
+            display: block;
+            margin-bottom: emCal(16, 20);
+            input {
+              margin-right: emCal(16, 10);
+            }
+          }
+          button {
+            @extend .btn, .-dark;
+            height: emCal(13, 45) !important;
+            padding: 0 emCal(13, 30) !important;
+          }
+        }
+      }
+      p {
+        @include typo($fsz: emCal(16, 15), $lh: emCal(15, 28));
+        margin-bottom: emCal(15, 20);
+      }
+    }
+  }
+  &__title {
+    @include typo($fsz: emCal(16, 20), $fw: 700);
+    margin-bottom: emCal(20, 35);
+  }
+}

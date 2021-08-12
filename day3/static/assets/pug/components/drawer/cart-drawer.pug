@@ -1,0 +1,35 @@
+include ../../base/variable.pug
+include ../../mixins/button.pug
+#cart-drawer.drawer.drawer-right.slide(tabindex='-1' role='dialog' aria-labelledby='drawer-demo-title' aria-hidden='true')
+  .drawer-content.drawer-content-scrollable(role='document')
+    .drawer-body
+      .cart-sidebar
+        .cart-items__wrapper
+          h2 Shopping cart
+          .cart-item
+            .cart-item__image
+              img(src=PRODUCTS[0].images[0], alt="Product image")
+            .cart-item__info
+              a(href="/product-detail.html")= PRODUCTS[0].name
+              h5= `$${PRODUCTS[0].price}.00`
+              p Quantity:
+                span  1
+            a(href="#").cart-item__remove
+              i.fal.fa-times
+          .cart-item
+            .cart-item__image
+              img(src=PRODUCTS[1].images[1], alt="Product image")
+            .cart-item__info
+              a(href="/product-detail.html")= PRODUCTS[1].name
+              h5= `$${PRODUCTS[1].price}.00`
+              p Quantity:
+                span  1
+            a(href="#").cart-item__remove
+              i.fal.fa-times
+          .cart-items__total
+            .cart-items__total__price
+              h5 Total
+              span $73.00
+            .cart-items__total__buttons
+              +button({classname:"-dark", href: 'cart.html', content: 'View cart'})
+              +button({classname:"-red", href: 'checkout.html', content: 'Checkout'})

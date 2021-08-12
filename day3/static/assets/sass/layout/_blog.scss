@@ -1,0 +1,32 @@
+.blog-one {
+  margin-bottom: remCal(80);
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: emCal(16, 40);
+    @include mq(md) {
+      grid-template-columns: 1fr;
+      gap: emCal(14, 15);
+    }
+  }
+}
+
+.blog-two {
+  margin-bottom: remCal(70);
+  &-content {
+    margin: 0 emCal(16, -15);
+    padding-bottom: remCal(100);
+    border-bottom: 1px solid setShadeColor(light);
+    .slider-item {
+      padding: emCal(16, 15);
+      outline: 0;
+    }
+  }
+}
+
+.blog-three {
+  margin-bottom: remCal(70);
+  .post-card-five {
+    margin-bottom: emCal(16, 30);
+  }
+}

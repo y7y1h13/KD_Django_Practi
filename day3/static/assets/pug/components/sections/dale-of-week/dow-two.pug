@@ -1,0 +1,17 @@
+include ../../../mixins/button.pug
+.dow-two
+  .container
+    .row.align-items-center
+      .col-12.col-lg-6.order-lg-2
+        .dow-two__image
+          .dow-two__image__parallax
+            img(src="assets/images/deal_of_week/DOWTwo/1.png", alt="Dale of the week image", data-depth="0.4")
+      .col-12.col-lg-6.order-lg-1
+        .dow-two__content
+          h5 Deal of the week
+          h3 Lip and liner
+          .special-price
+            p $20.00
+            span $30.00
+        #clock.dow-two__content__countdown
+        +button({href:"#", classname: '-white', content: 'Shop now'})

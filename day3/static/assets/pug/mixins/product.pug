@@ -1,0 +1,61 @@
+include button.pug
+include rate.pug
+mixin product(props = {})
+  - var {type = 'grid', classname = '', data = {}} = props
+  - var percentDiscount = data.discount ? Math.ceil(100 - (100 * data.discount) / data.price) : null;
+  - function renderProductType() {if (data.new) {return '<h5 class="-new">New</h5>'}; if(data.discount && typeof data.discount === "number") {return `<h5 class="-sale">-${percentDiscount}%</h5>`} return null}
+  if type === 'grid' || !type
+    div(class=`product ${classname}`)
+      .product-type!= renderProductType()
+      .product-thumb
+        a.product-thumb__image(href="/shop/product-detail.html")
+          each img in data.thumbImage
+            img(src=img, alt="Product image")
+        .product-thumb__actions
+          .product-btn
+            +button({classname: '-white product__actions__item -round product-atc', content: '<i class="fas fa-shopping-bag"></i>', href: '#'})
+          .product-btn
+            +button({classname: '-white product__actions__item -round product-qv', content: '<i class="fas fa-eye"></i>', href: '#'})
+          .product-btn
+            +button({classname: '-white product__actions__item -round', content: '<i class="fas fa-heart"></i>', href: '#'})
+      .product-content
+        .product-content__header
+          .product-category= data.category
+          +rate({value: data.rate})
+        a.product-name(href="/shop/product-detail.html")= data.name
+        .product-content__footer
+          h5.product-price--main= `$${data.discount ? data.discount : data.price}.00`
+          if data.discount
+            h5.product-price--discount= `$${data.price}.00`
+          if data.variation
+            .product-colors
+              each color in data.variation
+                .product-colors__item(style=`background-color: ${color.colorCode}`)
+  else
+    .product-list
+      .product-list-thumb
+        .product-type!= renderProductType()
+        a.product-list-thumb__image(href="/shop/product-detail.html")
+          each img in data.thumbImage
+            img(src=img, alt="Product image")
+      .product-list-content
+        .product-list-content__top
+          .product-category__wrapper
+            h5.product-category= data.category
+            +rate({value: data.rate})
+          a.product-name(href="/shop/product-detail.html")= data.name
+          .product__price
+            .product__price__wrapper
+              h5.product-price--main= `$${data.discount ? data.discount : data.price}.00`
+              if data.discount
+                h5.product-price--discount= `$${data.price}.00`
+        .product-list-content__bottom
+          p.product-description Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ipsa fugiat accusantium reiciendis rem doloribus iste doloremque
+          .product-actions
+            .product-btn
+              +atcBtn
+            .product-btn
+              +button({content: '<i class="fas fa-eye"></i>', classname: '-white product__actions__item -round'})
+            .product-btn
+              +button({content: '<i class="fas fa-heart"></i>', classname: '-white product__actions__item -round'})
+

@@ -1,0 +1,20 @@
+include ../../../mixins/social-icons.pug
+.top-nav.-style-1
+  .container
+    .top-nav__wrapper
+      .top-nav-social
+        +socialIcons({classname: '-white'})
+      p.top-nav-promo Free shipping on international orders of $120+
+      .top-nav-selections
+        .top-nav-selections__item
+          select.customed-select.-borderless.-white(name="cur")
+            option(value="USD") USD
+            option(value="JPY") JPY
+            option(value="VND") VND
+        .top-nav-selections__item
+          select.customed-select.-borderless.-white(name="lang")
+            option(value="EN") ENG
+            option(value="JP") JAP
+            option(value="VI") VIE
+        .top-nav-selections__item
+          a(href="#") Signin

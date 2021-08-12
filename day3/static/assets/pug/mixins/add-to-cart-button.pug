@@ -1,0 +1,6 @@
+include button.pug
+mixin atcBtn(props = {})
+  - var {classname = ''} = props;
+  div(class=`add-to-cart ${classname}`)
+    +button({classname: '-round -red', href: '#', content: '<i class="fas fa-shopping-bag"></i>'})
+    h5 Add to cart

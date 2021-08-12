@@ -1,0 +1,220 @@
+.dow-one {
+  position: relative;
+  margin-bottom: remCal(100);
+  &__image {
+    max-width: 52%;
+    padding-bottom: emCal(16, 50);
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+    img {
+      @include imgCenter;
+      transition: $transition;
+    }
+    @include mq(xxl) {
+      max-width: 80%;
+      padding-bottom: 300px;
+    }
+    @include mq(md) {
+      max-width: 90%;
+      padding-bottom: 300px;
+    }
+  }
+  &__content {
+    position: absolute;
+    max-width: 52%;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    padding: emCal(16, 90) emCal(16, 80);
+    box-shadow: 0px 3px 20px 0 #dfdfe0;
+    overflow: hidden;
+    background: {
+      image: url("../images/deal_of_week/DOWOne/2.png");
+      size: cover;
+      position: center;
+    }
+    @include mq(xxl) {
+      max-width: 70%;
+    }
+    @include mq(md) {
+      max-width: 90%;
+      font-size: 13px;
+    }
+    @include mq(sm) {
+      font-size: 11px;
+    }
+    h5 {
+      @include typo($fsz: 1em, $color: setColor(red), $up: true, $fw: 500);
+      letter-spacing: emCal(16, 6.4);
+      margin-bottom: emCal(16, 30);
+    }
+    h3 {
+      @include typo($fsz: emCal(16, 60), $fw: 700);
+      margin-bottom: emCal(60, 25);
+    }
+    &__countdown {
+      display: flex;
+      margin-bottom: emCal(16, 50);
+      .countdown__item {
+        text-align: center;
+        padding: emCal(16, 15) 0;
+        width: emCal(16, 70);
+        margin-right: emCal(16, 50);
+        @include mq(sm) {
+          margin-right: emCal(11, 10);
+        }
+        background: {
+          image: url("../images/deal_of_week/DOWOne/decoration.png");
+          size: contain;
+          position: left center;
+          repeat: no-repeat;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        h6 {
+          @include typo($fsz: emCal(16, 30), $fw: 700);
+          margin-bottom: emCal(30, 5);
+        }
+        span {
+          @include typo($fsz: 1em);
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.dow-two {
+  background: {
+    image: url("../images/deal_of_week/DOWTwo/bg.png");
+    size: cover;
+    position: left center;
+    repeat: no-repeat;
+  }
+  margin-bottom: remCal(100);
+  padding: emCal(16, 80) 0;
+  &__content {
+    h5 {
+      @include typo($fsz: 1em, $color: #fff, $up: true, $fw: 500);
+      letter-spacing: emCal(16, 6.4);
+      margin-bottom: emCal(16, 30);
+    }
+    h3 {
+      @include typo($fsz: emCal(16, 60), $color: #fff, $fw: 700);
+      margin-bottom: emCal(60, 25);
+    }
+    &__countdown {
+      display: flex;
+      margin-bottom: emCal(16, 50);
+      .countdown__item {
+        height: emCal(16, 100);
+        width: emCal(16, 100);
+        margin-right: emCal(16, 40);
+        border-radius: 999px;
+        border: 1px dashed rgba(#fff, $alpha: 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h6 {
+          @include typo($fsz: emCal(16, 30), $color: #fff, $fw: 700);
+          margin-bottom: emCal(30, 10);
+        }
+        span {
+          @include typo($fsz: emCal(16, 13), $color: #fff);
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        @include mq(md) {
+          margin-right: emCal(14, 15);
+          h6 {
+            font-size: emCal(14, 20);
+          }
+        }
+      }
+    }
+    .special-price {
+      display: flex;
+      align-items: center;
+      margin-bottom: emCal(16, 40);
+      p {
+        @include typo($fsz: emCal(16, 30), $color: #fff, $fw: 700);
+        margin-right: emCal(30, 35);
+      }
+      span {
+        text-decoration: line-through;
+        @include typo($fsz: 1em, $color: #fff, $fw: 700);
+      }
+    }
+  }
+  &__image {
+    @include mq(lg) {
+      margin-bottom: emCal(16, 50);
+    }
+    img {
+      @include imgCenter;
+    }
+  }
+}
+
+.dow-three {
+  margin-bottom: remCal(100);
+  background: {
+    image: url("../images/deal_of_week/DOWThree/bg.png");
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+  padding: emCal(16, 130) 0;
+  &__content {
+    text-align: center;
+    h5 {
+      @include typo($fsz: 1em, $fw: 600, $color: setColor(red), $up: true);
+      letter-spacing: emCal(16, 3.2);
+      margin-bottom: emCal(16, 30);
+    }
+    h3 {
+      @include typo($fsz: emCal(16, 60), $color: #fff);
+      font-family: "Braga";
+      margin-bottom: emCal(60, 50);
+    }
+    &__countdown {
+      display: flex;
+      justify-content: center;
+      background-color: #fff;
+      max-width: emCal(16, 520);
+      margin-left: auto;
+      margin-right: auto;
+      padding: emCal(16, 35) 0;
+      margin-bottom: emCal(16, 40);
+      .countdown__item {
+        margin-left: emCal(16, 35);
+        margin-right: emCal(16, 35);
+        @include mq(md) {
+          margin-left: emCal(16, 15);
+          margin-right: emCal(16, 15);
+        }
+        @include spaceTrim;
+        h6 {
+          @include typo($fsz: emCal(16, 30), $fw: 600);
+          @include mq(md) {
+            font-size: emCal(14, 20);
+          }
+          margin-bottom: emCal(30, 10);
+        }
+        span {
+          @include typo($fsz: emCal(16, 14), $color: setShadeColor(medium));
+        }
+      }
+    }
+    .btn {
+      color: #fff;
+    }
+  }
+}

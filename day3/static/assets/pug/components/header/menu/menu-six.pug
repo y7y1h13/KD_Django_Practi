@@ -1,0 +1,25 @@
+include ../../../mixins/menu-icon.pug
+.menu.-style-6
+  .container
+    .menu__wrapper
+      +menuIcon({hide: ['cart']})
+      .navigator
+        ul.navigator_part.-left
+          li
+            a(href='fullwidth-4col.html') Palettes
+          li
+            a(href='fullwidth-4col.html') Eyes
+          li
+            a(href='fullwidth-4col.html') Face
+          li
+            a(href='fullwidth-4col.html') Lips
+        a.menu__wrapper__logo(href="index.html")
+          img(src="assets/images/logo.png", alt="Logo")
+        ul.navigator_part.-right
+          li
+            a(href='fullwidth-4col.html') Cheek
+          li
+            a(href='fullwidth-4col.html') Sets
+          li
+            a(href='fullwidth-4col.html') Nails
+      +menuIcon({hide: ['search']})

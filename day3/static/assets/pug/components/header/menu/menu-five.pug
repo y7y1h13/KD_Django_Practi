@@ -1,0 +1,9 @@
+include ../../../mixins/navigator.pug
+include ../../../mixins/menu-icon.pug
+.menu.-style-3
+  div(class=`${isWideContainer ? 'container-full-half' : 'container'}`)
+    .menu__wrapper
+      a(href="/index.html")
+        img(src="assets/images/logo-white.png", alt="Logo")
+      +navigator({classname: '-white'})
+      +menuIcon({white: true})
