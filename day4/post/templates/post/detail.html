@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block post %}
+
+<!-- PAGE TITLE -->
+<div class="eskimo-page-title">
+    <h1><span>{{post.title}}</span></h1>
+    <div class="eskimo-page-title-meta">
+        <div class="eskimo-author-meta">
+            By <a class="author-meta" href="">{{post.author}}</a>
+        </div>
+        <div class="eskimo-cat-meta">
+            In <a href="">{{post.category}}</a>
+        </div>
+        <div class="eskimo-date-meta">{{post.updated}}</div>
+        <div class="eskimo-reading-meta">3 min read</div>
+    </div>
+</div>
+<!-- FEATURED IMAGE -->
+<div class="eskimo-featured-img">
+    <img src="{{post.photo.url}}" alt="" />
+</div>
+<!-- POST CONTENT -->
+<div class="eskimo-page-content">
+    <p>{{post.text}}</p>
+    <blockquote>
+        <p>{{post.description}}</p>
+    </blockquote>
+    <div class="clearfix"></div>
+    <!-- TAGS -->
+    <div class="eskimo-meta-tags">
+        {% for category in categories %}
+        <span class="badge badge-default"><a href="">{{category.name}}</a></span>
+        {% endfor %}
+    </div>
+    <!-- POST NAVIGATION -->
+    <div class="eskimo-post-nav-wrapper">
+    </div>
+</div>
+<div class="clearfix"></div>
+
+{% endblock %}

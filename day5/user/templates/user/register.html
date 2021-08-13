@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class ="container">
+        <div class= "row mt-5"> <!--여백추가 mt-5-->
+            <div class= "col-12 text-center">
+                <h1>회원가입</h1>
+
+            </div>
+        </div>
+        <div class= "row">
+            <div class= "col-12">
+                {% if res_data %}
+                <p style="color:red"> {{res_data}}</p>
+                {% endif %}
+                <form method="POST" action="">
+                    {% csrf_token %} <!--크로스 도메인 막기위해 암호화된 키 숨겨놓는다.-->
+                    <div class="form-group mb-3 mt-5"><!--form의 경우 데이터를 서버에 전달-->
+<!--                        <label for="username" class="form-label">사용자 이름</label>-->
+                        <input type="text" class="form-control form-control-lg" id="username"  placeholder="사용자 이름" name="username">
+                    </div>
+                    <div class="form-group mb-3">
+<!--                        <label for="useremail">이메일</label>-->
+                        <input type="email" class="form-control form-control-lg" id="useremail" placeholder="이메일" name="useremail">
+                    </div>
+
+                    <select class="form-select form-select-lg mb-3" aria-label="Default select example" name="gender" id="gender">
+                        <option selected>성별을 선택하세요.</option>
+                        <option value="M">남자</option>
+                        <option value="W">여자</option>
+                    </select>
+
+                    <select class="form-select form-select-lg mb-3" aria-label="Default select example" name="job" id="job">
+                        <option selected>직업을 선택하세요.</option>
+                        <option value="P">강사</option>
+                        <option value="S">학생</option>
+                        <option value="R">연구원</option>
+                        <option value="E">기타</option>
+                    </select>
+
+                    <div class="form-group mb-3">
+<!--                        <label for="password">비밀번호</label>-->
+                        <input type="password" class="form-control form-control-lg" id="password" placeholder="비밀번호" name="password">
+                    </div>
+                    <div class="form-group mb-5">
+<!--                        <label for="re-password">비밀번호</label>-->
+                        <input type="password" class="form-control form-control-lg" id="re-password" placeholder="비밀번호 확인" name="re-password">
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="submit" class="btn btn-primary btn-lg">등록</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

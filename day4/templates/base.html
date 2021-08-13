@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    {% load static %}
+    <title>Eskimo - HTML Template</title>
+    <!-- META TAGS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- CSS FILES -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- READING POSITION INDICATOR -->
+    <progress value="0" id="eskimo-progress-bar">
+        <span class="eskimo-progress-container">
+            <span class="eskimo-progress-bar"></span>
+        </span>
+    </progress>
+    <!-- SITE WRAPPER -->
+    <div id="eskimo-site-wrapper">
+        <!-- MAIN CONTAINER -->
+        <main id="eskimo-main-container">
+            <div class="container">
+                <!-- SIDEBAR -->
+                <div id="eskimo-sidebar">
+                    <div id="eskimo-sidebar-wrapper" class="d-flex align-items-start flex-column h-100 w-100">
+                        <!-- LOGO -->
+                        <div id="eskimo-logo-cell" class="w-100">
+                            <a class="eskimo-logo-link" href="index.html">
+                                <img src="{% static 'images/logo.png' %}" class="eskimo-logo" alt="eskimo" />
+                            </a>
+                        </div>
+                        <!-- MENU CONTAINER -->
+                        <div id="eskimo-sidebar-cell" class="w-100">
+                            <!-- MOBILE MENU BUTTON -->
+                            <div id="eskimo-menu-toggle">MENU</div>
+                            <!-- MENU -->
+                            <nav id="eskimo-main-menu" class="menu-main-menu-container">
+                                <ul class="eskimo-menu-ul">
+                                    <li><a href="#">Home</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="index.html">Demo 1</a></li>
+                                            <li><a href="index2.html">Demo 2</a></li>
+                                            <li><a href="index3.html">Demo 3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">About Me</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="about.html">Demo 1</a></li>
+                                            <li><a href="about-2.html">Demo 2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Blog</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="blog.html">Full Width</a></li>
+                                            <li><a href="blog-2-column.html">2 Column</a></li>
+                                            <li><a href="blog-3-column.html">3 Column</a></li>
+                                            <li><a href="single-post.html">Single Post</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="galleries.html">Galleries</a></li>
+                                    <li><a href="other-features.html">Other Features</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- SOCIAL MEDIA ICONS -->
+                        <div id="eskimo-social-cell" class="mt-auto w-100">
+                            <div id="eskimo-social-inner">
+                                <ul class="eskimo-social-icons">
+                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TOP ICONS -->
+                <ul class="eskimo-top-icons">
+                    <li id="eskimo-panel-icon">
+                        <a href="#eskimo-panel" class="eskimo-panel-open"><i class="fa fa-bars"></i></a>
+                    </li>
+                    <li id="eskimo-search-icon">
+                        <a id="eskimo-open-search" href="#"><i class="fa fa-search"></i></a>
+                    </li>
+                </ul>
+                {% block post %}
+
+                {% endblock %}
+            </div>
+        </main>
+        <!-- FOOTER -->
+        <footer id="eskimo-footer">
+            <div class="container">
+                <div class="row eskimo-footer-wrapper">
+                    <!-- FOOTER WIDGET 1 -->
+                    <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                        <h5 class="eskimo-title-with-border"><span>About Me</span></h5>
+                        <p>Trusted by thousands of customers, my unique themes and plugins help you make beautiful responsive web sites with ease.</p>
+                        <p><a href="about.html" class="btn btn-default">Read More</a></p>
+                    </div>
+                    <!-- FOOTER WIDGET 2 -->
+                    <div class="col-12 col-lg-6">
+                        <h5 class="eskimo-title-with-border"><span>Newsletter</span></h5>
+                        <form method="post" action="index.html">
+                            <label>Subscribe to our mailing list!</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" name="EMAIL" placeholder="Your email address" required />
+                                <div class="input-group-append">
+                                    <input type="submit" value="Sign up" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- CREDITS -->
+                <div class="eskimo-footer-credits">
+                    <p>
+                        Made with love by <a href="https://themeforest.net/user/egemenerd" target="_blank">Egemenerd</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- GO TO TOP BUTTON -->
+    <a id="eskimo-gototop" href="#"><i class="fa fa-chevron-up"></i></a>
+    <!-- SLIDE PANEL OVERLAY -->
+    <div id="eskimo-overlay"></div>
+    <!-- SLIDE PANEL -->
+    <div id="eskimo-panels">
+        <aside id="eskimo-panel" class="eskimo-panel">
+            <div class="eskimo-panel-inner">
+                <!-- CLOSE SLIDE PANEL BUTTON -->
+                <a href="#" class="eskimo-panel-close"><i class="fa fa-times"></i></a>
+                <!-- AUTHOR BOX -->
+                <div class="eskimo-author-box eskimo-widget">
+                    <div class="eskimo-author-img">
+                        <img src="{% static 'images/300x300.png' %}" alt="JOHN DOE" />
+                    </div>
+                    <h3><span>JOHN DOE</span></h3>
+                    <p class="eskimo-author-subtitle">WEB DESIGNER &amp; DEVELOPER</p>
+                    <p class="eskimo-author-description">I'm a Web Developer and Designer with a strong passion for UX/UI design. I have experience building websites, web applications, and brand assets. Contact me if you have any questions!</p>
+                    <div class="eskimo-author-box-btn">
+                        <a class="btn btn-default" href="about.html">CONTACT ME</a>
+                    </div>
+                </div>
+                <!-- RECENT POSTS -->
+                <div class="eskimo-recent-entries eskimo-widget">
+                    <h5 class="eskimo-title-with-border"><span>Recent Posts</span></h5>
+                    <ul>
+                        <li>
+                            <a href="single-post.html">Ketchup Flavored Ice Cream!</a>
+                            <span class="post-date">May 28, 2018</span>
+                        </li>
+                        <li>
+                            <a href="single-post.html">Hair You've Always Dreamed Of</a>
+                            <span class="post-date">May 27, 2018</span>
+                        </li>
+                        <li>
+                            <a href="single-post.html">15 Of The World's Best Carnivals</a>
+                            <span class="post-date">May 25, 2018</span>
+                        </li>
+                        <li>
+                            <a href="single-post.html">5 Ways to a Healthy Lifestyle</a>
+                            <span class="post-date">May 25, 2018</span>
+                        </li>
+                        <li>
+                            <a href="single-post.html">Best Breakfast In The World</a>
+                            <span class="post-date">May 23, 2018</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- CATEGORIES -->
+                <div class="eskimo-categories eskimo-widget">
+                    <h5 class="eskimo-title-with-border"><span>Categories</span></h5>
+                    <ul>
+                        <li>
+                            <a href="category.html" title="The best restaurants, cafes, bars and shops in town.">Food &amp; Drink</a> <span class="badge badge-pill badge-default">5</span>
+                        </li>
+                        <li>
+                            <a href="category.html" title="An up-to-date, personal urban guide.">Lifestyle</a> <span class="badge badge-pill badge-default">5</span>
+                        </li>
+                        <li>
+                            <a href="category.html" title="Latest technology news and updates.">Technology</a> <span class="badge badge-pill badge-default">4</span>
+                        </li>
+                        <li>
+                            <a href="category.html" title="Travel advice, information and inspiration.">Travel</a> <span class="badge badge-pill badge-default">5</span>
+                        </li>
+                        <li>
+                            <a href="category.html" title="The latest news about movies and TV shows.">TV &amp; Movies</a> <span class="badge badge-pill badge-default">4</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- TAGS -->
+                <div class="eskimo-widget">
+                    <h5 class="eskimo-title-with-border"><span>Tags</span></h5>
+                    <div class="eskimo-tag-cloud">
+                        <a href="category.html">aute<span>7</span></a>
+                        <a href="category.html">enim<span>7</span></a>
+                        <a href="category.html">commodo<span>7</span></a>
+                        <a href="category.html">voluptatibus<span>7</span></a>
+                        <a href="category.html">culpa<span>7</span></a>
+                        <a href="category.html">offendit<span>7</span></a>
+                        <a href="category.html">magna<span>7</span></a>
+                        <a href="category.html">quorum<span>7</span></a>
+                        <a href="category.html">mandaremus<span>7</span></a>
+                        <a href="category.html">ingeniis<span>7</span></a>
+                        <a href="category.html">tempor<span>7</span></a>
+                        <a href="category.html">summis<span>7</span></a>
+                        <a href="category.html">consequat<span>6</span></a>
+                        <a href="category.html">iudicem<span>6</span></a>
+                        <a href="category.html">expetendis<span>6</span></a>
+                        <a href="category.html">deserunt<span>6</span></a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <!-- FULLSCREEN SEARCH -->
+    <div id="eskimo-fullscreen-search">
+        <div id="eskimo-fullscreen-search-content">
+            <a href="#" id="eskimo-close-search"><i class="fa fa-times"></i></a>
+            <form role="search" method="get" action="search.html" class="eskimo-lg-form">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="Enter a keyword..." name="s" />
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- JS FILES -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/panel.js' %}"></script>
+    <script src="{% static 'js/reading-position-indicator.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>

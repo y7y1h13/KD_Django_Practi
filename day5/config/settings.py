@@ -1,8 +1,4 @@
 from pathlib import Path
-import pymysql
-import os
-pymysql.install_as_MySQLdb()
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#j9kayeq+2mib_r%&-m3bvz7=5zoydm30fkpmw4#-%^u%h$-zr'
+SECRET_KEY = 'django-insecure-r#tn7247q=l)vcl6*up$^1*a!bz+z5jzjev)*n8iba@xus5q8p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -29,8 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storages',
-    'post',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -48,7 +43,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,12 +64,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'day4db',
-        'USER': 'admin',
-        'PASSWORD': 'dbgusals1',
-        'HOST': 'day4db.c6f9olbkzmcs.ap-northeast-2.rds.amazonaws.com',
-        'PORT': '3306'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -117,30 +108,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# S3를 사용할 수 있는 곳
-# 1. Static
-
-AWS_ACCESS_KEY_ID = 'AKIAXEABGLSEOFRUTK7W'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_REGION = 'ap-northeast-2'
-AWS_STORAGE_BUCKET_NAME = 'day4pro'
-
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
-
-AWS_S3_FILE_OVERWRITE = False
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl':'max-age=86400',
-}
-AWS_DEFAULT_ACL = 'public-read'
-AWS_LOCATION = 'static'
-
-STATIC_URL = 'http://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DEFAULT_FILE_STORAGE = 'config.s3media.MediaStorage'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-STATICFILES_DIRS = (os.path.join('static'),)
