@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1bd0aa9-bacf-4c59-b555-a62cbe6fabce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../day3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day3/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day4/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day4/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day5/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day5/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../day5/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day3/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../day3/shop/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +22,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../day2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../day3" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -36,6 +33,7 @@
       <option name="presentableId" value="Default" />
       <updated>1629023354575</updated>
       <workItem from="1629023355770" duration="8000" />
+      <workItem from="1629349198329" duration="4000" />
     </task>
     <servers />
   </component>
